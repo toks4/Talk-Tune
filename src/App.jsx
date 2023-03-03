@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import NavBar from "./components/NavBar";
 import ErrorPage from "./pages/ErrorPage";
 import ExplorePage from "./pages/ExplorePage";
+import AllPodcasts from "./components/AllPodcasts";
 
 function App() {
  return (
@@ -16,12 +17,14 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/explore" element={<ExplorePage />} />
+        <Route path='/explore/allpodcasts' element={<AllPodcasts />} />
+
 
 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
       
-    </div>
+    </div>  
   );
 }
 

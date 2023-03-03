@@ -9,7 +9,7 @@ const LoginPage = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5173/auth/login', {
+      const response = await axios.post('http://localhost:5005/auth/login', {
         username,
         password,
       })
