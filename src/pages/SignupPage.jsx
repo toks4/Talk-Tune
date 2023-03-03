@@ -10,19 +10,21 @@ const SignupPage = () => {
   const [city, setCity] = useState('')
   const [country, setCountry] = useState('')
   const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5173/auth/signup', {
+      const response = await axios.post('http://localhost:5005/auth/signup', {
         firstname,
         lastname,
         birthday,
         city,
         country,
         email,
+        username,
         password,
       })
       console.log(response.data)
@@ -37,49 +39,55 @@ const SignupPage = () => {
 
   return (
    <div>
-    <form>
-        <label>First Name: </label>
+    <form onSubmit={handleSubmit} >
+        <label>First Name: 
         <input 
            type="text" 
            value={firstname}
            onChange={event => setFirstName(event.target.value)}
-           onSubmit={handleSubmit} />
-        <label>Last Name: </label>
+           /> </label>
+        <label>Last Name: 
            <input 
            type="text" 
            value={lastname}
            onChange={event => setLastName(event.target.value)}
-           onSubmit={handleSubmit} />
-            <label>Birthday: </label>
+           /> </label>
+            <label>Birthday: 
            <input 
            type="number" 
            value={birthday}
            onChange={event => setBirthday(event.target.value)}
-           onSubmit={handleSubmit} />
-            <label>Country: </label>
+            /> </label>
+            <label>Country: 
            <input 
            type="text" 
            value={country}
            onChange={event => setCountry(event.target.value)}
-           onSubmit={handleSubmit} />
-            <label>City: </label>
+           /> </label>
+            <label>City:
            <input 
            type="text" 
            value={city}
            onChange={event => setCity(event.target.value)}
-           onSubmit={handleSubmit} />
-            <label>Email: </label>
+           />  </label>
+            <label>Email: 
            <input 
            type="text" 
            value={email}
            onChange={event => setEmail(event.target.value)}
-           onSubmit={handleSubmit} />
-            <label>Password: </label>
+           /> </label>
+           <label>Username: 
+           <input 
+           type="text" 
+           value={username}
+           onChange={event => setUsername(event.target.value)}
+           /> </label>
+            <label>Password: 
            <input 
            type="text" 
            value={password}
            onChange={event => setPassword(event.target.value)}
-           onSubmit={handleSubmit} />
+           /> </label>
     <button className='signUpBtn' type='submit'>Sign Up</button>
     </form>
     </div>
