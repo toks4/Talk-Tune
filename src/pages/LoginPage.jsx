@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   // Add some states to control your inputs
@@ -9,12 +10,21 @@ const LoginPage = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5173/auth/login', {
-        username,
+      const response = await axios.post('http://localhost:5005/auth/login', {
+        username, 
         password,
       })
       console.log(response.data)
-    } catch (error) {
+
+      if (response.status === 201) {
+        useNavigate('/profile')
+
+    }
+    }
+    
+    
+    
+    catch (error) {
       console.error(error)
     }
   }
