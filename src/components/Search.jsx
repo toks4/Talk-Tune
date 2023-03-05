@@ -1,6 +1,8 @@
 import React from 'react';
 import { Divider } from 'antd';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Container, FormControl, InputGroup } from 'react-bootstrap';
 
 
 function Search({ filterAll }) {
@@ -13,9 +15,27 @@ function Search({ filterAll }) {
     }
 
   return (
-    <div>
-    <Divider>Search</Divider>
-    <input type="text" value={searchQuery} onChange={handleInput} />
+    <div className='explorePageSearchBar'>
+     <Divider>Search</Divider>
+      <Container>
+       <InputGroup className='explorePageSearch'>
+        <FormControl
+        className='searchBar'
+        placeholder='Search'
+        type="input"
+        onKeyPress={event => {
+        if (event.key == "Enter") {
+        console.log("Pressed enter");
+        }
+      }}
+      value={searchQuery} onChange={handleInput}
+      />
+          <Link>
+           <Button className='searchBtn' type='submit'
+           onClick={() => {console.log("Clicked Button")}} > Search </Button>
+          </Link>
+       </InputGroup>
+     </Container>
     </div>   
   ); 
 }
