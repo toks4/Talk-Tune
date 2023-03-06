@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ExplorePage from "./pages/ExplorePage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePodcast from "./pages/CreatePodcast";
+//import AllPodcasts from "./components/AllPodcasts";
 
 
 
@@ -20,14 +21,15 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/profile" element= {<ProfilePage />} />
-        <Route path="/createPodcast" element={<CreatePodcast />} />
+        
+        <Route path="/profile/:userId" element= {<ProfilePage />} />
+        <Route path="/createPodcast/:userId" element={<CreatePodcast />} />
 
 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
       
-    </div>
+    </div>  
   );
 }
 

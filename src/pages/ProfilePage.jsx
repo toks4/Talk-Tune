@@ -30,9 +30,17 @@ function ProfilePage() {
   return (
     <div>
     <h1>ProfilePage</h1>
+    <Link to='/profile/updateprofile'>
+        <button className='updateProfileBtn' type='submit'> Update Profile </button>
+    </Link>
+    <Link to='/profile/deleteprofile'>
+        <button className='deleteProfileBtn' type='submit'> Delete Profile </button>
+    </Link>
+
     <Link to='/createPodcast'>
-        <button className='podcastsBtn' type='submit'>Podcast</button>
-        </Link>
+        <button className='podcastsBtn' type='submit'> Podcasts </button>
+    </Link>
+  
     
     </div>
   )
