@@ -6,8 +6,8 @@ const LoginPage = () => {
   // Add some states to control your inputs
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-
-  const handleSubmit = async event => {
+  const navigate = useNavigate()
+  const handleSubmit = async (event) => {
     event.preventDefault()
     try {
       const response = await axios.post('http://localhost:5005/auth/login', {
@@ -15,11 +15,11 @@ const LoginPage = () => {
         password,
       })
       console.log(response.data)
+      navigate('/profile')
+      //if (response.status === 201) {
+       
 
-      if (response.status === 201) {
-        useNavigate('/profile')
-
-    }
+    //}
     }
     
     
@@ -31,18 +31,21 @@ const LoginPage = () => {
 
   return (
   <div>
-    <form>
+    <form  onSubmit={handleSubmit} >
     <input 
            type="text" 
            value={username
            }
-           onChange={event => setUsername(event.target.value)}
-           onSubmit={handleSubmit} />
-    <input 
-           type="text" 
+           onChange={event => setUsername(event.target.value)}/>
+          
+    <input
+    type="text" 
            value={password}
-           onChange={event => setPassword(event.target.value)}
-           onSubmit={handleSubmit} />
+           onChange={event => setPassword(event.target.value)}/>
+
+
+           
+          
     <button className='logInBtn' type='submit'>Log In</button>
     </form>
   </div>

@@ -20,8 +20,8 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/profile/:userId" element= {<ProfilePage />} />
-        <Route path="/createPodcast/:userId" element={<CreatePodcast />} />
+        <Route path="/profile" element= {<ProfilePage />} />
+        <Route path="/createPodcast" element={<CreatePodcast />} />
 
 
         <Route path="*" element={ <ErrorPage /> } />

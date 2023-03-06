@@ -11,7 +11,7 @@ function ProfilePage() {
 
 
     const getUser = async () => {
-    const response = await axios(`http://localhost:5005/auth/${userId}`,{
+    const response = await axios.get(`http://localhost:5005/auth/${userId}`,{
         
     })
     const data = await response.json();
@@ -31,7 +31,7 @@ function ProfilePage() {
     <div>
     <h1>ProfilePage</h1>
     <Link to='/createPodcast'>
-        <button className='podcastsBtn' type='submit'> Podcasts </button>
+        <button className='podcastsBtn' type='submit'>Podcast</button>
         </Link>
     
     </div>
