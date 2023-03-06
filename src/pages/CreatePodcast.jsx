@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import { Navigate } from 'react-router-dom'
+import axios from 'axios';
 
 function CreatePodcast() {
     const [podcastname, setPodcastName] = React.useState()
@@ -16,7 +17,7 @@ function CreatePodcast() {
 
         const CreatePodcast = {name, description, category, audio, image, episode}
         console.log(CreatePodcast)
-        const response = await axios.post('http://localhost:5005/Auth/podcasts', CreatePod)
+        const response = await axios.post('http://localhost:5005/pod/podcasts', CreatePod)
 
 
         setPodcastName('')
@@ -31,7 +32,14 @@ function CreatePodcast() {
 
 
     }
-
+   const podcastUpdate = {name, description, category, audio, image, episode}
+   const response =  axios.put('http://localhost:5005/pod/podcasts', podcastUpdate)
+   setPodcastName('')
+        setPodcastDescription('')
+        setPodcastCategory('')
+        setPodcastAudio('')
+        setPodcastImage('')
+        setPodcastEpisode('')
 
 
 
@@ -41,6 +49,11 @@ function CreatePodcast() {
         <h4>CreatePod</h4>
         <form stlye = {{display : "flex", flexDirection: 'column'}}onSubmit={handleSubmit}>
         <label>Name; <input type= "text" onChange = {event => setName (event.target.value)}></input></label>
+        <label>description; <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
+        <label>Category; <input type= "text" onChange = {event => setPodcastCategory (event.target.value)}></input></label>
+        <label>Audio; <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>
+        <label>Image; <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
+        <label>Episode; <input type= "text" onChange = {event => setPodcastEpisode(event.target.value)}></input></label>
 
 
 

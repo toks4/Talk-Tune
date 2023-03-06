@@ -9,9 +9,10 @@ const LoginPage = () => {
   // Add some states to control your inputs
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const { setToken } = useContext(SessionContext)
 
-  const handleSubmit = async event => {
+  const { setToken } = useContext(SessionContext)
+  const navigate = useNavigate()
+  const handleSubmit = async (event) => {
     event.preventDefault()
     try {
       const response = await axios.post('http://localhost:5005/auth/login', {
@@ -47,7 +48,6 @@ const LoginPage = () => {
            onChange={event => setPassword(event.target.value)}
        />
     </label>
-    
     <button className='logInBtn' type='submit'>Log In</button>
     </form>
   </div>
