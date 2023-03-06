@@ -5,6 +5,7 @@ import App from './App'
 import './index.css'
 import SessionContextProvider  from './contexts/SessionContext'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>

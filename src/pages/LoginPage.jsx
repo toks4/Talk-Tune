@@ -5,8 +5,6 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-
-
 const LoginPage = () => {
   // Add some states to control your inputs
   const [username, setUsername] = useState('')
@@ -17,16 +15,18 @@ const LoginPage = () => {
     event.preventDefault()
     try {
       const response = await axios.post('http://localhost:5005/auth/login', {
-        username,
-        password,
-        
+        username, 
+        password
       })
       console.log(response)
       setToken(response.data.authToken)
-
     } catch (error) {
+      if (response.status === 201) {
+        useNavigate('/profile')
+      }
       console.error(error)
     }
+    
   }
 
   return (
