@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";   
 import { Form, Button } from "react-bootstrap";
-import React from 'react';
+import React, { useContext } from 'react'
 import '/src/App.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container';
+import {SessionContext} from "../contexts/SessionContext";
 
 
 function NavBar() {
+
+  const {logoutFunction} = useContext(SessionContext)
+
   return (
     <div className="container-fluid">
     <a class='navbar-brand' href='/'><img src="src/assets/logo.png" width='200px' height='200px'alt="logo"/></a>
@@ -35,6 +39,7 @@ function NavBar() {
             <Button className='searchBtnMain' type='submit'
            onClick={() => {console.log("Clicked Button")}}>Search</Button>
           </Form>
+          <button onClick={logoutFunction}>Logout</button>
       </ul>
       </Navbar.Collapse>
    </Container>
