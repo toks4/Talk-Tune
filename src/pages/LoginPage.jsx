@@ -1,19 +1,29 @@
 import { useState } from 'react';
 import axios from 'axios';
+import {SessionContext} from "../contexts/SessionContext";
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 const LoginPage = () => {
   // Add some states to control your inputs
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const { setToken } = useContext(SessionContext)
 
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5173/auth/login', {
+      const response = await axios.post('http://localhost:5005/auth/login', {
         username,
         password,
+        
       })
-      console.log(response.data)
+      console.log(response)
+      setToken(response.data.authToken)
+
     } catch (error) {
       console.error(error)
     }
@@ -21,18 +31,23 @@ const LoginPage = () => {
 
   return (
   <div>
-    <form>
-    <input 
+    <form onSubmit={handleSubmit}>
+    <label>Username:
+       <input 
            type="text" 
            value={username
            }
            onChange={event => setUsername(event.target.value)}
-           onSubmit={handleSubmit} />
-    <input 
-           type="text" 
+       />
+    </label>
+    <label>Password:
+       <input 
+           type="password" 
            value={password}
            onChange={event => setPassword(event.target.value)}
-           onSubmit={handleSubmit} />
+       />
+    </label>
+    
     <button className='logInBtn' type='submit'>Log In</button>
     </form>
   </div>
