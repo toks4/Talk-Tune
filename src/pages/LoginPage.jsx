@@ -15,6 +15,7 @@ const LoginPage = () => {
         password,
       })
       console.log(response.data)
+
       navigate('/profile')
       //if (response.status === 201) {
        

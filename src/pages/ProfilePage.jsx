@@ -11,7 +11,7 @@ function ProfilePage() {
 
 
     const getUser = async () => {
-    const response = await axios.get(`http://localhost:5005/auth/${userId}`,{
+    const response = await axios.get(`http://localhost:5005/profile/${userId}`,{
         
     })
     const data = await response.json();
