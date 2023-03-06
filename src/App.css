@@ -5,14 +5,3 @@
 body {
     background-color: #0E1520;
 }
-
-.NavBar {
-    display: flex;
-    align-items: center;
-
-}
-.NavBar2 {
-    display: flex;
-    align-items: center;
-}
-
