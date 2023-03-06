@@ -39,8 +39,13 @@ const SessionContextProvider = ({ children }) => {
     }
   }, [token])
 
+  const logoutFunction = ()=>{
+    window.localStorage.removeItem('authToken') 
+    setIsAuthenticated(false)
+  }
+
   return (
-    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading }}>
+    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction }}>
       {children}
     </SessionContext.Provider>
   )
