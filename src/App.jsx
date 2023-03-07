@@ -8,7 +8,7 @@ import ExplorePage from "./pages/ExplorePage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePodcast from "./pages/CreatePodcast";
 //import AllPodcasts from "./components/AllPodcasts";
-
+import UpdateProfile from "./pages/UpdateProfile";
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
         <Route path="/createPodcast/:userId" element={<CreatePodcast />} />
-
+        <Route path="profile/updateprofile" element={<UpdateProfile />} />
 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>

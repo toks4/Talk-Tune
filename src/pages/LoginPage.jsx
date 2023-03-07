@@ -10,7 +10,7 @@ const LoginPage = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const { setToken } = useContext(SessionContext)
+  const { setToken, setUser } = useContext(SessionContext)
   const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -20,6 +20,8 @@ const LoginPage = () => {
         password
       })
       console.log(response.data)
+      setToken(response.data.authToken)
+      setUser(response.data.user)
 
       navigate('/profile')
       //if (response.status === 201) {
