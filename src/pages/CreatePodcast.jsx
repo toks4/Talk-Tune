@@ -1,23 +1,27 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { useContext } from 'react';
+import { SessionContext } from '../contexts/SessionContext';
 
 function CreatePodcast() {
     const [podcastname, setPodcastName] = React.useState()
     const [podcastdescription, setPodcastDescription] = React.useState()
-    const [podcascategory, setPodcastCategory] = React.useState()
+    const [podcastcategory, setPodcastCategory] = React.useState()
     const [podcastaudio, setPodcastAudio] = React.useState()
     const [podcastimage, setPodcastImage] = React.useState()
-    const [podcastepisode, setPodcastEpisode] = React.useState()
+    const [episodename, setEpisodeName] = React.useState()
+    const nav = useNavigate()
+    const { user } = useContext(SessionContext)
 
 
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const CreatePodcast = {name, description, category, audio, image, episode}
+        const CreatePodcast = {podcastname, podcastdescription, podcastcategory,
+        podcastaudio, podcastimage, episodename, creatorname:user._id}
         console.log(CreatePodcast)
-        const response = await axios.post('http://localhost:5005/pod/podcasts', CreatePod)
+        const response = await axios.post('http://localhost:5005/pod/podcast', CreatePodcast)
 
 
         setPodcastName('')
@@ -25,40 +29,31 @@ function CreatePodcast() {
         setPodcastCategory('')
         setPodcastAudio('')
         setPodcastImage('')
-        setPodcastEpisode('')
+        setEpisodeName('')
 
 
-        Navigate('/updatepodcast')
+        nav('/profile')
 
 
     }
-   const podcastUpdate = {name, description, category, audio, image, episode}
-   const response =  axios.put('http://localhost:5005/pod/podcasts', podcastUpdate)
-   setPodcastName('')
-        setPodcastDescription('')
-        setPodcastCategory('')
-        setPodcastAudio('')
-        setPodcastImage('')
-        setPodcastEpisode('')
 
 
 
   return (
     <div>
-        <NavBar />
         <h4>CreatePod</h4>
         <form stlye = {{display : "flex", flexDirection: 'column'}}onSubmit={handleSubmit}>
-        <label>Name; <input type= "text" onChange = {event => setName (event.target.value)}></input></label>
+        <label>Name; <input type= "text" onChange = {event => setPodcastName (event.target.value)}></input></label>
         <label>description; <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
         <label>Category; <input type= "text" onChange = {event => setPodcastCategory (event.target.value)}></input></label>
         <label>Audio; <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>
         <label>Image; <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
-        <label>Episode; <input type= "text" onChange = {event => setPodcastEpisode(event.target.value)}></input></label>
+        <label>Episode; <input type= "text" onChange = {event => setEpisodeName(event.target.value)}></input></label>
 
 
 
         <button type="submit">CreatePod</button>
-        <button type="button" onClick={() => Navigate('/updatepodcast')}>Back</button>
+        <button type="button" onClick={() => nav('/profile')}>Back</button>
 
 
 

@@ -30,12 +30,15 @@ if (!user) {
     <Link to='/profile/updateprofile'>
         <button className='updateProfileBtn' type='submit'> Update Profile </button>
     </Link>
-    <Link to='/profile/deleteprofile'>
-        <button className='deleteProfileBtn' type='submit'> Delete Profile </button>
+    <Link to='/profile/viewprofile'>
+        <button className='viewProfileBtn' type='submit'> View Profile </button>
     </Link>
 <Divider> </Divider>
     <Link to='/createPodcast'>
-        <button className='podcastsBtn' type='submit'> Podcasts </button>
+        <button className='podcastsBtn' type='submit'> Create Podcast </button>
+    </Link>
+    <Link to='/viewPodcast'>
+        <button className='viewPodcastsBtn' type='submit'> View Podcast </button>
     </Link>
   
     
