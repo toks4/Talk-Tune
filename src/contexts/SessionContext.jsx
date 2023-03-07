@@ -9,7 +9,7 @@ const SessionContextProvider = ({ children }) => {
 
   const verifyToken = async jwt => {
     try {
-      await fetch('http://localhost:5173/auth/verify', {
+      await fetch('http://localhost:5005/auth/verify', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${jwt}`,
