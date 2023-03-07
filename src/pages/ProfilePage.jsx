@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 
 
 
 function ProfilePage() {
     const [user, setUser] = useState('')
-    const [userId] = useParams('')
+   
 
 
 
-    const getUser = async () => {
+   /* const getUser = async () => {
     const response = await axios.get(`http://localhost:5005/auth/${userId}`,{
         
     })
     const data = await response.json();
     setUser(data)
 
-} 
+} */
 
 
 
