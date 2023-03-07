@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const SessionContext = createContext()
 
@@ -46,9 +47,13 @@ const SessionContextProvider = ({ children }) => {
     }
   }, [token])
 
+  const navigate = useNavigate()
+
   const logoutFunction = ()=>{
     window.localStorage.removeItem('authToken') 
     setIsAuthenticated(false)
+    navigate('/')
+
   }
 
   return (
