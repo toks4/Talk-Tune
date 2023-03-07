@@ -6,16 +6,22 @@ const SessionContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [token, setToken] = useState()
+  const [user, setUser] = useState('')
+
 
   const verifyToken = async jwt => {
     try {
-      let verifiedUser = await fetch('http://localhost:5173/auth/verify', {
-        method: 'POST',
+      let verifiedUser = await fetch('http://localhost:5005/auth/verify', {
+        method: 'GET',
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
       })
-      console.log(verifiedUser)
+      let oat = await verifiedUser.json()
+      console.log(oat)
+
+      setUser(oat.user)
+
       setToken(jwt)
       setIsAuthenticated(true)
       setIsLoading(false)
@@ -40,8 +46,13 @@ const SessionContextProvider = ({ children }) => {
     }
   }, [token])
 
+  const logoutFunction = ()=>{
+    window.localStorage.removeItem('authToken') 
+    setIsAuthenticated(false)
+  }
+
   return (
-    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading }}>
+    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction, setUser, user }}>
       {children}
     </SessionContext.Provider>
   )
