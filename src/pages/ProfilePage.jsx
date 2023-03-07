@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { Divider } from 'antd';
 import { SessionContext } from '../contexts/SessionContext';
 
 function ProfilePage() {
@@ -32,7 +33,7 @@ if (!user) {
     <Link to='/profile/deleteprofile'>
         <button className='deleteProfileBtn' type='submit'> Delete Profile </button>
     </Link>
-
+<Divider> </Divider>
     <Link to='/createPodcast'>
         <button className='podcastsBtn' type='submit'> Podcasts </button>
     </Link>
