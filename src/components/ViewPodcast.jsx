@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Card } from 'antd' 
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
     function ViewPodcast() {
 
     const [allPodcasts, setAllPodcasts] = useState('')
-   
+    const nav = useNavigate();
 
     useEffect(() => {
         async function fetchPodcast () {
@@ -18,18 +20,24 @@ import { Card } from 'antd'
     }, [])
 
   return (
-  <div>
+  <div className='allPodcasts'>
+  <h2> Your Podcasts </h2>
     {allPodcasts && allPodcasts.map((onePodcast) => {
         return (
-       <Card style={{ width: 230, height: 300, margin: 10 }}>
+       <Card style={{ width: 350, height: 600, margin: 15 }}>
        <h1>{onePodcast.podcastname}</h1>
-        <button>Update Podcast</button>
-        <button>Delete Podcast</button>
+       <h1>{onePodcast.podcastdescription}</h1>
+       <h1>{onePodcast.podcastcategory}</h1>
+       <h1>{onePodcast.podcastaudio}</h1>
+       <h1>{onePodcast.podcastimage}</h1>
+       <h1>{onePodcast.episodename}</h1>
+
+       <Link to='/updatePodcast'><button type='button'>Update Podcast</button></Link>
+        <button type='button'> Delete Podcast</button>
         </Card>
         
-        )
-    }),
-    }
+        )}
+      )}
    </div>
   )
 }

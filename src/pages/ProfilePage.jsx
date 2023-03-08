@@ -34,6 +34,9 @@ if (!user) {
         <button className='viewProfileBtn' type='submit'> View Profile </button>
     </Link>
 <Divider> </Divider>
+<Link to='/favouritePodcast'>
+        <button className='favPodcastsBtn' type='submit'> Favourite Podcast </button>
+    </Link>
     <Link to='/createPodcast'>
         <button className='podcastsBtn' type='submit'> Create Podcast </button>
     </Link>

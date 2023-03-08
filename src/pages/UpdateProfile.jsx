@@ -2,6 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
+///// STILL NEED TO WORK ON THIS PAGE /////
+
 const UpdateProfile = () => {
   // Add some states to control your inputs
   const [firstname, setFirstName] = useState('')
@@ -12,20 +15,24 @@ const UpdateProfile = () => {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  const { id } = useParams();
+  const nav = useNavigate()
 
-
-  const profileUpdate = {firstname, lastname, birthday, city, country, email, username, password}
-   const response =  axios.put('http://localhost:5005/profile', profileUpdate)
-   setPodcastName('')
-        setFirstName('')
-        setLastName('')
-        setBirthday('')
-        setCity('')
-        setCountry('')
-        setEmail('')
-        setUsername('')
-        setPassword('')
+  useEffect(() => {
+  const fetchData = async () => {
+   const response =  axios.put(`http://localhost:5005/auth/user/${id}`, profileUpdate)
+   const profileUpdate = {firstname, lastname, birthday, city, country, email, username, password} = response.data;
+        setFirstName(firstname);
+        setLastName(lastname);
+        setBirthday(birthday);
+        setCity(city);
+        setCountry(country);
+        setEmail(email);
+        setUsername(username);
+        setPassword(password);
+      };
+      fetchData();
+    }, [id]);
 
 
 return (
