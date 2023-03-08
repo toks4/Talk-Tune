@@ -22,9 +22,10 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
-        <Route path="/viewPodcast" element= {<ViewPodcast />} />
+        <Route path="/viewPodcast/" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
+
 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>

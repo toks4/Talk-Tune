@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { Card } from 'antd' 
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Card } from 'antd' ;
+import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
     function ViewPodcast() {
 
     const [allPodcasts, setAllPodcasts] = useState('')
     const nav = useNavigate();
+    const { podcastId } = useParams();
 
     useEffect(() => {
         async function fetchPodcast () {
@@ -18,6 +19,12 @@ import { Link } from 'react-router-dom'
       }
       fetchPodcast()
     }, [])
+
+    const handleDelete = async (id) => {
+      await axios.delete(`http://localhost:5005/pod/podcast/${id}`);
+      setAllPodcasts(allPodcasts.filter(podcast => podcast._id !== id));     
+    };
+  
 
   return (
   <div className='allPodcasts'>
@@ -33,7 +40,7 @@ import { Link } from 'react-router-dom'
        <h1>{onePodcast.episodename}</h1>
 
        <Link to={`/updatePodcast/${onePodcast._id}`}><button type='button'>Update Podcast</button></Link>
-        <button type='button'> Delete Podcast</button>
+       <button type='button' onClick={() => handleDelete(onePodcast._id)}> Delete Podcast </button>
         </Card>
         
         )}

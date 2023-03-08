@@ -12,14 +12,16 @@ function CreatePodcast() {
     const [podcastimage, setPodcastImage] = React.useState()
     const [episodename, setEpisodeName] = React.useState()
     const nav = useNavigate()
-    const { user } = useContext(SessionContext)
-
+    const {user} = useContext(SessionContext)
+    if (!user) {
+      return <p>Loading</p>
+     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
 
         const CreatePodcast = {podcastname, podcastdescription, podcastcategory,
-        podcastaudio, podcastimage, episodename, creatorname:user._id}
+        podcastaudio, podcastimage, episodename}
         console.log(CreatePodcast)
         const response = await axios.post('http://localhost:5005/pod/podcast', CreatePodcast)
 
@@ -32,7 +34,7 @@ function CreatePodcast() {
         setEpisodeName('')
 
 
-        nav('/profile')
+        nav('/viewPodcast')
 
     }
 
@@ -40,18 +42,36 @@ function CreatePodcast() {
     <div>
         <h4>Create Podcast </h4>
         <form style = {{display : "flex", flexDirection: 'column'}} onSubmit={handleSubmit}>
+        <label>Podcast Creator: {user.firstname} {user.lastname}</label>
         <label>Name: <input type= "text" onChange = {event => setPodcastName (event.target.value)}></input></label>
         <label>Description: <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
-        <label>Category: <input type= "text" onChange = {event => setPodcastCategory (event.target.value)}></input></label>
+        <label>Category:
+        <select value={podcastcategory} onChange = {event => setPodcastCategory (event.target.value)}>
+        <option> Choose Category </option>
+        <option value="business">Business</option>
+          <option value="tech">Technology</option>
+          <option value="news">News</option>
+          <option value="education">Education</option>
+          <option value="science">Science</option>
+          <option value="health/fitness">Health & Fitness</option>
+          <option value="sports">Sports</option>
+          <option value="comedy">Comedy</option>
+          <option value="fiction">Fiction</option>
+          <option value="religion/spirituality">Religion/Spirituality</option>
+          <option value="arts">Arts</option>
+          <option value="music">Music</option>
+          <option value="tv/film">TV & Film</option>
+          <option value="history">History</option>
+          <option value="culture">Society & Culture</option>
+          <option value="truecrime">True Crime</option>
+        </select>
+        </label>
         <label>Audio: <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>
         <label>Image: <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
         <label>Episode: <input type= "text" onChange = {event => setEpisodeName(event.target.value)}></input></label>
 
-        <Link to='/viewPodcast'><button type="submit" >Create Podcast</button></Link>
+        <button type="submit" >Create Podcast</button>
         <button type="button" onClick={() => nav('/profile')}>Back</button>
-
-
-
 
         </form>
     </div>
