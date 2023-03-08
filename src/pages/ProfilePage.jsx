@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { SessionContext } from '../contexts/SessionContext'
-import '../App.css'
-
+import { Divider } from 'antd';
+import { SessionContext } from '../contexts/SessionContext';
 
 function ProfilePage() {
 
@@ -35,23 +34,20 @@ if (!user) {
     <div>
     <div>
     <Link to='/profile/updateprofile'>
-      
-      <button className='updateProfileBtn' type='submit'> Update Profile </button>
-   </Link>
-    </div>
-    <div>
-    <Link to='/profile/Viewprofile'>
-      <button className='ViewProfileBtn' type='submit'>View Profile</button>
-  </Link>
-    </div>
-  
-    </div>
-    </div>
-    
-   
-
+        <button className='updateProfileBtn' type='submit'> Update Profile </button>
+    </Link>
+    <Link to='/profile/viewprofile'>
+        <button className='viewProfileBtn' type='submit'> View Profile </button>
+    </Link>
+<Divider> </Divider>
+<Link to='/favouritePodcast'>
+        <button className='favPodcastsBtn' type='submit'> Favourite Podcast </button>
+    </Link>
     <Link to='/createPodcast'>
-        <button className='podcastsBtn' type='submit'> Podcasts </button>
+        <button className='podcastsBtn' type='submit'> Create Podcast </button>
+    </Link>
+    <Link to='/viewPodcast'>
+        <button className='viewPodcastsBtn' type='submit'> View Podcast </button>
     </Link>
    
    

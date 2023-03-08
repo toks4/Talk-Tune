@@ -24,6 +24,7 @@ function NavBar() {
         <Link to="/" className="nav-item"> Home </Link> 
         <Link to="/signup" className="nav-item"> Signup </Link> 
         <Link to="/login" className="nav-item"> Login </Link>
+        <Link to="/profile" className="nav-item"> Profile </Link>
         <Link to="/explore" className="nav-item"> Explore </Link>
         <Form className="searchBar">
             <Form.Control
