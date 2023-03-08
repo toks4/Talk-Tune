@@ -8,6 +8,7 @@ const SessionContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [token, setToken] = useState()
   const [user, setUser] = useState('')
+  const [podcastId, setPodcastId] = useState('')
 
 
   const verifyToken = async jwt => {
@@ -22,6 +23,11 @@ const SessionContextProvider = ({ children }) => {
       console.log(oat)
 
       setUser(oat.user)
+
+      let test = await verifiedUser.json()
+        console.log(test)
+        setPodcastId(test.podcastId)
+
 
       setToken(jwt)
       setIsAuthenticated(true)
@@ -57,7 +63,7 @@ const SessionContextProvider = ({ children }) => {
   }
 
   return (
-    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction, setUser, user }}>
+    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction, setUser, user, podcastId, setPodcastId }}>
       {children}
     </SessionContext.Provider>
   )
