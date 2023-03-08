@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { SessionContext } from '../contexts/SessionContext';
+import { SessionContext } from '../contexts/SessionContext'
+import '../App.css'
+
 
 function ProfilePage() {
 
@@ -24,18 +26,62 @@ if (!user) {
 }
 
   return (
-    <div>
+    <div className=''>
+
+
+    <div className='user-prof'>
     <h1>Hi, {user.firstname}!</h1>
+
+    <div>
+    <div>
     <Link to='/profile/updateprofile'>
-        <button className='updateProfileBtn' type='submit'> Update Profile </button>
-    </Link>
-    <Link to='/profile/deleteprofile'>
-        <button className='deleteProfileBtn' type='submit'> Delete Profile </button>
-    </Link>
+      
+      <button className='updateProfileBtn' type='submit'> Update Profile </button>
+   </Link>
+    </div>
+    <div>
+    <Link to='/profile/Viewprofile'>
+      <button className='ViewProfileBtn' type='submit'>View Profile</button>
+  </Link>
+    </div>
+  
+    </div>
+    </div>
+    
+   
 
     <Link to='/createPodcast'>
         <button className='podcastsBtn' type='submit'> Podcasts </button>
     </Link>
+   
+   
+   
+   <div className='container'>
+
+   
+    
+
+   </div>
+   <div>
+    <button className='logoutBtn' type='submit'>Favourite podcastsBtn</button>
+   </div>
+   <div>
+    <button className='logoutBtn' type='submit'>Create own Podcast</button>
+   </div>
+   <div>
+    <button className='logoutBtn' type='submit'>Update own Podcast</button>
+   </div>
+
+   <div>
+    <button className='logoutBtn' type='submit'>Logout</button>
+   </div>
+    
+
+
+
+
+  
+  
   
     
     </div>
