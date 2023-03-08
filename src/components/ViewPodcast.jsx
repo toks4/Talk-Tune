@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Card } from 'antd' ;
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { SessionContext } from '../contexts/SessionContext';
 
     function ViewPodcast() {
 
@@ -45,6 +46,7 @@ import { Link } from 'react-router-dom';
         
         )}
       )}
+      <button type="button" onClick={() => nav('/profile')}>Back</button>
    </div>
   )
 }

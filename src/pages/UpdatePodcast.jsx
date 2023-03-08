@@ -54,7 +54,7 @@ function UpdatePodcast() {
 
   return (
     <div>
-      <h4>Edit Podcast</h4>
+      <h4>Update Podcast</h4>
       <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
       <label>Podcast Creator: {user.firstname} {user.lastname}</label>
         <label>
@@ -85,7 +85,6 @@ function UpdatePodcast() {
           <option value="history">History</option>
           <option value="culture">Society & Culture</option>
           <option value="truecrime">True Crime</option>
-
           </select>
         </label>
         <label>
@@ -101,7 +100,7 @@ function UpdatePodcast() {
           <input type="text" value={episodename} onChange={(event) => setEpisodeName(event.target.value)} />
         </label>
 
-        <button type="submit" > Update Podcast </button>
+        <button className='updatePodcastBtn' type="submit" > Update Podcast </button>
         <button type="button" onClick={() => nav('/viewPodcast')}>Back</button>
       </form>
     </div>

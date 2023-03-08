@@ -21,17 +21,15 @@ function ProfilePage() {
 
 const {user} = useContext(SessionContext)
 if (!user) {
-   return <p>Loading</p>
+   return <p>You need to Login First!</p>
 }
 
   return (
     <div>
     <h1>Hi, {user.firstname}!</h1>
-    <Link to='/profile/updateprofile'>
-        <button className='updateProfileBtn' type='submit'> Update Profile </button>
-    </Link>
-    <Link to='/profile/viewprofile'>
-        <button className='viewProfileBtn' type='submit'> View Profile </button>
+  
+    <Link to='/viewProfile'>
+        <button className='viewProfileBtn' type='submit'> View Profile Information </button>
     </Link>
 <Divider> </Divider>
 <Link to='/favouritePodcast'>
@@ -41,9 +39,8 @@ if (!user) {
         <button className='podcastsBtn' type='submit'> Create Podcast </button>
     </Link>
     <Link to='/viewPodcast'>
-        <button className='viewPodcastsBtn' type='submit'> View Podcast </button>
+        <button className='viewPodcastsBtn' type='submit'> View Your Podcast(s) </button>
     </Link>
-  
     
     </div>
   )

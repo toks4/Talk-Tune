@@ -10,6 +10,8 @@ import CreatePodcast from "./pages/CreatePodcast";
 //import AllPodcasts from "./components/AllPodcasts";
 import ViewPodcast from "./components/ViewPodcast";
 import UpdatePodcast from "./pages/UpdatePodcast";
+import ViewProfile from "./components/ViewProfile";
+import UpdateProfile from "./pages/UpdateProfile";
 
 function App() {
  return (
@@ -22,9 +24,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
-        <Route path="/viewPodcast/" element= {<ViewPodcast />} />
+        <Route path="/viewPodcast" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
+        <Route path="/viewProfile" element= {<ViewProfile />} />
+        <Route path="/updateProfile/:profileId" element={<UpdateProfile />} />
+
+
 
 
         <Route path="*" element={ <ErrorPage /> } />
