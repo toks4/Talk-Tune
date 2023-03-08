@@ -1,5 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
@@ -34,25 +34,20 @@ function CreatePodcast() {
 
         nav('/profile')
 
-
     }
-
-
 
   return (
     <div>
-        <h4>CreatePod</h4>
-        <form stlye = {{display : "flex", flexDirection: 'column'}}onSubmit={handleSubmit}>
-        <label>Name; <input type= "text" onChange = {event => setPodcastName (event.target.value)}></input></label>
-        <label>description; <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
-        <label>Category; <input type= "text" onChange = {event => setPodcastCategory (event.target.value)}></input></label>
-        <label>Audio; <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>
-        <label>Image; <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
-        <label>Episode; <input type= "text" onChange = {event => setEpisodeName(event.target.value)}></input></label>
+        <h4>Create Podcast </h4>
+        <form style = {{display : "flex", flexDirection: 'column'}} onSubmit={handleSubmit}>
+        <label>Name: <input type= "text" onChange = {event => setPodcastName (event.target.value)}></input></label>
+        <label>Description: <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
+        <label>Category: <input type= "text" onChange = {event => setPodcastCategory (event.target.value)}></input></label>
+        <label>Audio: <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>
+        <label>Image: <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
+        <label>Episode: <input type= "text" onChange = {event => setEpisodeName(event.target.value)}></input></label>
 
-
-
-        <button type="submit">CreatePod</button>
+        <Link to='/viewPodcast'><button type="submit" >Create Podcast</button></Link>
         <button type="button" onClick={() => nav('/profile')}>Back</button>
 
 

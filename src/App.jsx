@@ -8,8 +8,8 @@ import ExplorePage from "./pages/ExplorePage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePodcast from "./pages/CreatePodcast";
 //import AllPodcasts from "./components/AllPodcasts";
-import UpdateProfile from "./pages/UpdateProfile";
 import ViewPodcast from "./components/ViewPodcast";
+import UpdatePodcast from "./pages/UpdatePodcast";
 
 function App() {
  return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="/profile" element= {<ProfilePage />} />
         <Route path="/viewPodcast" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
-        <Route path="/profile/updateprofile" element={<UpdateProfile />} />
+        <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
