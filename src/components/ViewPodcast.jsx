@@ -23,8 +23,8 @@ import { Card } from 'antd'
         return (
        <Card style={{ width: 230, height: 300, margin: 10 }}>
        <h1>{onePodcast.podcastname}</h1>
-        <button>Update Podcast</button>
-        <button>Delete Podcast</button>
+        <button> Update Podcast </button>
+        <button> Delete Podcast </button>
         </Card>
         
         )
