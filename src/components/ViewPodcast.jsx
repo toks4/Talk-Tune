@@ -13,7 +13,7 @@ import { SessionContext } from '../contexts/SessionContext';
 
     useEffect(() => {
         async function fetchPodcast () {
-        const response =  await axios.get(`http://localhost:5005/pod/podcast`)
+        const response =  await axios.get(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast`)
 
 
        setAllPodcasts(response.data)
@@ -22,7 +22,7 @@ import { SessionContext } from '../contexts/SessionContext';
     }, [])
 
     const handleDelete = async (id) => {
-      await axios.delete(`http://localhost:5005/pod/podcast/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast/${id}`);
       setAllPodcasts(allPodcasts.filter(podcast => podcast._id !== id));     
     };
   
@@ -40,8 +40,9 @@ import { SessionContext } from '../contexts/SessionContext';
        <h1>{onePodcast.podcastimage}</h1>
        <h1>{onePodcast.episodename}</h1>
 
-       <Link to='/updatePodcast'><button type='button'>Update Podcast</button></Link>
-        <button type='button'> Delete Podcast</button>
+       <Link to={`/updatePodcast/${onePodcast._id}`}><button type='button'>Update Podcast</button></Link>
+       <Link to={`/addReview/${onePodcast._id}`}><button type='button'>Add a review</button></Link>
+       <button type='button' onClick={() => handleDelete(onePodcast._id)}> Delete Podcast </button>
         </Card>
         
         )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import ReviewForm from '../components/ReviewForm'
+import ReviewForm from '../components/reviewForm'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -8,7 +8,7 @@ function Temporary() {
 
     const podcastReview = async () => {
         try {
-            const response = await axios.get('http://localhost:5005/reviews')
+            const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/reviews`)
             setReviews(response)
         } catch (error) {
             console.log(error);

@@ -1,18 +1,25 @@
-import React from 'react'
+import {Component } from 'react'
 import { useContext } from 'react'
+import { render } from 'react-dom'
 import { SessionContext } from '../contexts/SessionContext'
+import { Link } from 'react-router-dom'
 import "../Navbar.css"
 
 
 
-function NavBar() {
+function  NavBar (){
+  
+  /*handleClick = () => {
+    this.setState({clicked:!this.state.clicked})
+  };*/
+  const {logoutFunction} = useContext(SessionContext)
+  const { token } = useContext(SessionContext);
     
  
 
-  const {logoutFunction} = useContext(SessionContext)
-  const { token } = useContext(SessionContext)
+  
 
- 
+
   return (
 
     <>
@@ -21,17 +28,19 @@ function NavBar() {
       <div>
       <ul id="navbar">
       <li><a href="/">Home</a></li>
-      <li><a href="/">Profile</a></li>
-      <li><a href="/">Explore</a></li>
-      <li><a href="/">Signup</a></li>
-      <li><a href="/">Login</a></li>
-      <li><a href="/">About</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/explore">Explore</a></li>
+      <li><a href="/signup">Signup</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/about">About</a></li>
       </ul>
+      
         
       </div>
       <div id="mobile-nav">
-        <i className="fas fa-bars"></i>
+        <i id="bar" className= 'fas fa-times'></i>
       </div>
+      
     </nav>
 
 
@@ -47,7 +56,9 @@ function NavBar() {
    
    
    
-   
+   )
+  }
+
    
    
    
@@ -106,7 +117,6 @@ function NavBar() {
 
 
    
-  )
-}
+
 
 export default NavBar

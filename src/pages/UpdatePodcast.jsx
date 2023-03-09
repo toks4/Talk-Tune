@@ -20,7 +20,7 @@ function UpdatePodcast() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:5005/pod/podcast/${podcastId}`);
+      const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast/${podcastId}`);
       console.log(response.data)
       const { podcastname, podcastdescription, podcastcategory, podcastaudio, podcastimage, episodename } = response.data;
       setPodcastName(podcastname);
@@ -45,7 +45,7 @@ function UpdatePodcast() {
       episodename,
     };
 
-    const response = await axios.put(`http://localhost:5005/pod/podcast/${podcastId}`, updatedPodcast);
+    const response = await axios.put(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast/${podcastId}`, updatedPodcast);
     console.log(response.data)
 
     nav ('/viewPodcast')
