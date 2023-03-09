@@ -1,5 +1,7 @@
 import React from 'react'
-
+import { useContext } from 'react'
+import { SessionContext } from '../contexts/SessionContext'
+import "../Navbar.css"
 
 
 
@@ -12,7 +14,44 @@ function NavBar() {
 
  
   return (
-    <div className="container-fluid">
+
+    <>
+    <nav>
+      <a href="#"><img src="src/assets/logo.png" width='200px' height='200px'alt="logo"/></a>
+      <div>
+      <ul id="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">Profile</a></li>
+      <li><a href="/">Explore</a></li>
+      <li><a href="/">Signup</a></li>
+      <li><a href="/">Login</a></li>
+      <li><a href="/">About</a></li>
+      </ul>
+        
+      </div>
+      <div id="mobile-nav">
+        <i className="fas fa-bars"></i>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+    </>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    /* <div className="container-fluid">
     <a className='navbar-brand' href='/'><img src="src/assets/logo.png" width='200px' height='200px'alt="logo"/></a>
        <div className="navbarText">
        </div>
@@ -50,7 +89,7 @@ function NavBar() {
       </Navbar.Collapse>
    </Container>
   </Navbar>
-</div>
+</div>*/
 
  
 
@@ -66,31 +105,7 @@ function NavBar() {
 
 
 
-    /*<div>
-    <nav className="nav">
-        <a href="/" className='nav__brand'>Home</a>
-        <ul className="nav__menu">
-        <li className='nav__item '>
-        <a href='#' className='nav__link'>HomePage</a></li>
-        <li className='nav__item '>
-        <a href='#' className='nav__link'>signup</a></li>
-        <li className='nav__item '>
-        <a href='#' className='nav__link'>login</a></li>
-        <li className='nav__item '>
-        <a href='#' className='nav__link'>explore</a></li>
-        <li className='nav__item '>
-        <a href='#' className='nav__link'>explore</a></li>
-       
-
-        </ul>
-        <div className='nav__toggler'>
-            <div className='line1'></div>
-            <div className='line2'></div>
-            <div className='line3'></div>
-        </div>
-    </nav>
-    
-    </div>*/
+   
   )
 }
 
