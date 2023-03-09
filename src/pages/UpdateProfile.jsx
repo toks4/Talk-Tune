@@ -55,7 +55,7 @@ function UpdateProfile(){
     };
 
 
-retur
+return (
   <div>
   <h4>Update Profile</h4>
    <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} >
