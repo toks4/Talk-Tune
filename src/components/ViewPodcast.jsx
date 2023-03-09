@@ -10,15 +10,26 @@ import { SessionContext } from '../contexts/SessionContext';
     const [allPodcasts, setAllPodcasts] = useState('')
     const nav = useNavigate();
     const { podcastId } = useParams();
+    const [podReviews, setPodReviews] = useState([])
 
     useEffect(() => {
         async function fetchPodcast () {
         const response =  await axios.get(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast`)
-
-
        setAllPodcasts(response.data)
       }
       fetchPodcast()
+    }, [])
+
+
+    useEffect(() => {
+      async function fetchPodReviews () {
+        try {
+          const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/reviews/${podcastId}`)
+        console.log(response.data);
+        } catch (error){
+          console.log(error);
+        }
+      }
     }, [])
 
     const handleDelete = async (id) => {

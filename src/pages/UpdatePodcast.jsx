@@ -101,7 +101,7 @@ function UpdatePodcast() {
         </label>
 
         <button className='updatePodcastBtn' type="submit" > Update Podcast </button>
-        <button type="button" onClick={() => nav('/viewPodcast')}>Back</button>
+        <button type="button" onClick={() => nav('/viewPodcast/:podcastId')}>Back</button>
       </form>
     </div>
   );

@@ -30,7 +30,7 @@ function App() {
         
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
-        <Route path="/viewPodcast" element= {<ViewPodcast />} />
+        <Route path="/viewPodcast/:podcastId" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
         <Route path="/viewProfile" element= {<ViewProfile />} />
