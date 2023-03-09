@@ -30,7 +30,7 @@ const SignupPage = () => {
       console.log(response.data)
 
       if (response.status === 201) {
-        navigate('/profile')
+        navigate('/login')
       }
     } catch (error) {
       console.error(error)

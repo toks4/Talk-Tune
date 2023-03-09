@@ -26,6 +26,9 @@ function ExplorePage() {
         </Link>
     </div>
   )
+
+
+  
 }
 
 export default ExplorePage
