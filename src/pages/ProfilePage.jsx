@@ -10,7 +10,7 @@ function ProfilePage() {
     const navigate = useNavigate()
 
    /* const getUser = async () => {
-    const response = await axios.get(`http://localhost:5005/profile/${userId}`,{
+    const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/profile/${userId}`,{
     
     })
     const data = await response.json();

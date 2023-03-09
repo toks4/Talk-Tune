@@ -13,7 +13,7 @@ import { SessionContext } from '../contexts/SessionContext';
 
     useEffect(() => {
         async function fetchPodcast () {
-        const response =  await axios.get(`http://localhost:5005/pod/podcast`)
+        const response =  await axios.get(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast`)
 
 
        setAllPodcasts(response.data)
@@ -22,7 +22,7 @@ import { SessionContext } from '../contexts/SessionContext';
     }, [])
 
     const handleDelete = async (id) => {
-      await axios.delete(`http://localhost:5005/pod/podcast/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast/${id}`);
       setAllPodcasts(allPodcasts.filter(podcast => podcast._id !== id));     
     };
   
