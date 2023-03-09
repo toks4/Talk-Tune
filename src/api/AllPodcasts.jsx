@@ -7,7 +7,7 @@ function AllPodcasts() {
   useEffect(() => {
     async function fetchShows() {
       try {
-        const response = await axios.get('/podcast/shows?ids=${ids}');
+        const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/podcast/shows?ids=${ids}`);
         setShows(response.data);
       } catch (error) {
         console.log(error);
