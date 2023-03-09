@@ -7,7 +7,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ExplorePage from "./pages/ExplorePage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePodcast from "./pages/CreatePodcast";
-//import AllPodcasts from "./components/AllPodcasts";
+import AllPodcasts from "./api/AllPodcasts";
 import ViewPodcast from "./components/ViewPodcast";
 import UpdatePodcast from "./pages/UpdatePodcast";
 import ViewProfile from "./components/ViewProfile";
@@ -16,6 +16,7 @@ import Temporary from "./pages/Temporary";
 import { useContext } from 'react'
 import { SessionContext } from './contexts/SessionContext';
 import ReviewForm from "./components/reviewForm";
+
 
 function App() {
 
@@ -35,8 +36,7 @@ function App() {
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
         <Route path="/viewProfile" element= {<ViewProfile />} />
         <Route path="/updateProfile/:profileId" element={<UpdateProfile />} />
-
-
+        <Route path="/explore/allPodcasts" element= {<AllPodcasts />} />
 
 
         <Route path="/addReview/:podcastId" element={<ReviewForm/>}/>

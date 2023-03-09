@@ -14,28 +14,23 @@ const LoginPage = () => {
   const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault()
+
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/auth/login`, {
         username, 
-        password
+        password,
       })
       console.log(response.data)
+
       setToken(response.data.authToken)
       setUser(response.data.user)
 
+      if (response.status === 201) {
       navigate('/profile')
-      //if (response.status === 201) {
-       
-
-    //}
-    }
-    
-    
-    
-    catch (error) {
+      } 
+    } catch (error) {
       console.error(error)
     }
-    
   }
 
   return (
