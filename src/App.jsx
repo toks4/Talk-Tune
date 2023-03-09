@@ -32,7 +32,7 @@ function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
         <Route path="/viewPodcast" element= {<ViewPodcast />} />
-        <Route path="/createPodcast" element={<CreatePodcast />} />
+        <Route path="/createPodcast/:podcastId" element={<CreatePodcast />} />
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
         <Route path="/viewProfile" element= {<ViewProfile />} />
         <Route path="/updateProfile/:profileId" element={<UpdateProfile />} />

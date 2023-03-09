@@ -34,7 +34,7 @@ useEffect(()=>{
     <div className=''>
 
 
-   <div className='user-prof'>
+   <div>
        <h1>Hi, {user.firstname}!</h1>
 
     </div>
@@ -52,7 +52,7 @@ useEffect(()=>{
     <Link to='/createPodcast'>
         <button className='podcastsBtn' type='submit'> Create Podcast </button>
     </Link>
-    <Link to='/viewPodcast'>
+    <Link to='/viewPodcast/:podcastId'>
         <button className='viewPodcastsBtn' type='submit'> View Podcast </button>
     </Link>
     </Divider>
