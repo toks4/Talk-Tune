@@ -1,5 +1,5 @@
 import React from 'react'
-import ReviewForm from '../components/ReviewForm'
+import ReviewForm from '../components/reviewForm'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
