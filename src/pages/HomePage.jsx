@@ -8,6 +8,8 @@ const HomePage = () => {
   }
   return (
     <div>
+    <img src='/src/assets/BackgroundHP.png' class='homePageBGImg'></img>
+    <h1 homePageBGTitle>Self Development,<br></br>Made Easy</h1>
     </div>
   )
 }

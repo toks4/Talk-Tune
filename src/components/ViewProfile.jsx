@@ -22,8 +22,8 @@ function ViewProfile() {
 
     const handleDelete = async (id) => {
         await axios.delete(`http://localhost:5005/profile/${id}`);
-        setUrProfile(urProfile.filter(profile => profile._id !== id));     
-      };
+        setUrProfile(urProfile.filter(profile => profile._id !== id));   
+    };
 
 
   return (
