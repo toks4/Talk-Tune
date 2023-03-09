@@ -15,7 +15,7 @@ import UpdateProfile from "./pages/UpdateProfile";
 import Temporary from "./pages/Temporary";
 import { useContext } from 'react'
 import { SessionContext } from './contexts/SessionContext';
-import ReviewForm from "./components/ReviewForm";
+import ReviewForm from "./components/reviewForm";
 
 function App() {
 
