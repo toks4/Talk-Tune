@@ -12,11 +12,16 @@ function UpdatePodcast() {
   const [episodename, setEpisodeName] = useState('');
   const { podcastId } = useParams();
   const { user } = useContext(SessionContext);
+  if (!user) {
+    return <p>Loading</p>
+   }
+
   const nav = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(`http://localhost:5005/pod/podcast/${podcastId}`);
+      console.log(response.data)
       const { podcastname, podcastdescription, podcastcategory, podcastaudio, podcastimage, episodename } = response.data;
       setPodcastName(podcastname);
       setPodcastDescription(podcastdescription);
@@ -38,17 +43,20 @@ function UpdatePodcast() {
       podcastaudio,
       podcastimage,
       episodename,
-      creatorname: user._id,
     };
 
     const response = await axios.put(`http://localhost:5005/pod/podcast/${podcastId}`, updatedPodcast);
+    console.log(response.data)
 
+    nav ('/viewPodcast')
   };
+
 
   return (
     <div>
-      <h4>Edit Podcast</h4>
+      <h4>Update Podcast</h4>
       <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
+      <label>Podcast Creator: {user.firstname} {user.lastname}</label>
         <label>
           Name:
           <input type="text" value={podcastname} onChange={(event) => setPodcastName(event.target.value)} />
@@ -59,7 +67,25 @@ function UpdatePodcast() {
         </label>
         <label>
           Category:
-          <input type="text" value={podcastcategory} onChange={(event) => setPodcastCategory(event.target.value)} />
+          <select value={podcastcategory} onChange={(event) => setPodcastCategory(event.target.value)} >
+          <option> Choose Category </option>
+          <option value="business">Business</option>
+          <option value="tech">Technology</option>
+          <option value="news">News</option>
+          <option value="education">Education</option>
+          <option value="science">Science</option>
+          <option value="health/fitness">Health & Fitness</option>
+          <option value="sports">Sports</option>
+          <option value="comedy">Comedy</option>
+          <option value="fiction">Fiction</option>
+          <option value="religion/spirituality">Religion/Spirituality</option>
+          <option value="arts">Arts</option>
+          <option value="music">Music</option>
+          <option value="tv/film">TV & Film</option>
+          <option value="history">History</option>
+          <option value="culture">Society & Culture</option>
+          <option value="truecrime">True Crime</option>
+          </select>
         </label>
         <label>
           Audio:
@@ -74,8 +100,8 @@ function UpdatePodcast() {
           <input type="text" value={episodename} onChange={(event) => setEpisodeName(event.target.value)} />
         </label>
 
-        <Link to='/viewProfile'><button type="submit" > Update Podcast </button></Link>
-        <Link to='/profile'><button type="button" > Back </button></Link>
+        <button className='updatePodcastBtn' type="submit" > Update Podcast </button>
+        <button type="button" onClick={() => nav('/viewPodcast')}>Back</button>
       </form>
     </div>
   );
