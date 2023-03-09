@@ -15,6 +15,7 @@ import UpdateProfile from "./pages/UpdateProfile";
 import Temporary from "./pages/Temporary";
 import { useContext } from 'react'
 import { SessionContext } from './contexts/SessionContext';
+import ReviewForm from "./components/ReviewForm";
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         
         
-          <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
         <Route path="/viewPodcast" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
@@ -38,7 +39,7 @@ function App() {
 
 
 
-        <Route path="/reviews/addReview" element={<Temporary/>}/>
+        <Route path="/addReview/:podcastId" element={<ReviewForm/>}/>
        
           <Route path="/login" element={<LoginPage />} />
         

@@ -41,6 +41,7 @@ import { SessionContext } from '../contexts/SessionContext';
        <h1>{onePodcast.episodename}</h1>
 
        <Link to={`/updatePodcast/${onePodcast._id}`}><button type='button'>Update Podcast</button></Link>
+       <Link to={`/addReview/${onePodcast._id}`}><button type='button'>Add a review</button></Link>
        <button type='button' onClick={() => handleDelete(onePodcast._id)}> Delete Podcast </button>
         </Card>
         
