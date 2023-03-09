@@ -52,34 +52,7 @@ function NavBar() {
   </Navbar>
 </div>
 
- <div className="menu-link">
-<ul>
-    <li>
-        <a href="#">Home</a>
-    </li>
-    <li>
-        <a href="#">about</a>
-    </li>
-    <li>
-        <a href="#">Explore</a>
-    </li>
-    <li>
-        <a href="#">Services</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
-    </li>
-</ul>
-
-
- </div>
-
-
-
-
-</nav>
-</>
-
+ 
 
 
 
