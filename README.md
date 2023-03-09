@@ -1,5 +1,8 @@
-Project Name: Talk-Tune
-Description: An app that alows users to create a profile and get access (in principle at least) to different podcasts.
+Project Name:
+Talk-Tune
+
+Description:
+An app that alows users to create a profile and get access (in principle at least) to different podcasts.
 The app was created with Ironlauncher for the backend using Express and Node.js and Vite for the front using React and .jsx files.
 
 
