@@ -1,12 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from 'axios';
+import { useContext } from 'react';
+import { SessionContext } from '../contexts/SessionContext';
 
-function reviewForm() {
+function ReviewForm() {
   const [rating, setRating] = useState(0);
   const [content, setContent] = useState('')
+  const { user } = useContext(SessionContext)
     
-  handleReviewSubmit = async (event) => {
+  const handleReviewSubmit = async (event) => {
+    console.log({user})
     event.preventDefault()
+    const CreateReview = {rating, content, creator: 'test' }
+    
+      console.log(CreateReview)
+      const response = await axios.post('http://localhost:5005/reviews/addReviews', CreateReview)
   }
 
   return (
@@ -18,4 +27,4 @@ function reviewForm() {
   )
 }
 
-export default reviewForm
+export default ReviewForm

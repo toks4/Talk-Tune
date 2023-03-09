@@ -10,22 +10,32 @@ import CreatePodcast from "./pages/CreatePodcast";
 //import AllPodcasts from "./components/AllPodcasts";
 import ViewPodcast from "./components/ViewPodcast";
 import UpdatePodcast from "./pages/UpdatePodcast";
+import Temporary from "./pages/Temporary";
+import { useContext } from 'react'
+import { SessionContext } from './contexts/SessionContext';
 
 function App() {
- return (
+
+  return (
   <div className="App">
       <NavBar />
 
       <Routes>
         <Route path="/" element={<HomePage />} /> 
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/explore" element={<ExplorePage />} />
+        
+        
+          <Route path="/explore" element={<ExplorePage />} />
         <Route path="/profile" element= {<ProfilePage />} />
         <Route path="/viewPodcast" element= {<ViewPodcast />} />
         <Route path="/createPodcast" element={<CreatePodcast />} />
         <Route path="/updatePodcast/:podcastId" element={<UpdatePodcast />} />
-
+        <Route path="/reviews/addReview" element={<Temporary/>}/>
+       
+          <Route path="/login" element={<LoginPage />} />
+        
+        
+        
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
       

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
 import { Divider } from 'antd';
+import { useContext } from 'react'
 import { SessionContext } from '../contexts/SessionContext';
 
 function ProfilePage() {

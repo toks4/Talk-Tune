@@ -7,13 +7,15 @@ import Container from 'react-bootstrap/Container';
 import {SessionContext} from "../contexts/SessionContext";
 
 
+
 function NavBar() {
 
   const {logoutFunction} = useContext(SessionContext)
+  const { token } = useContext(SessionContext)
 
   return (
     <div className="container-fluid">
-    <a class='navbar-brand' href='/'><img src="src/assets/logo.png" width='200px' height='200px'alt="logo"/></a>
+    <a className='navbar-brand' href='/'><img src="src/assets/logo.png" width='200px' height='200px'alt="logo"/></a>
        <div className="navbarText">
        </div>
        <Navbar bg="light" expand="lg">
@@ -22,10 +24,15 @@ function NavBar() {
     <Navbar.Collapse id="navbarCollapse">
       <ul>
         <Link to="/" className="nav-item"> Home </Link> 
-        <Link to="/signup" className="nav-item"> Signup </Link> 
-        <Link to="/login" className="nav-item"> Login </Link>
-        <Link to="/profile" className="nav-item"> Profile </Link>
+      
+          <Link to="/profile" className="nav-item"> Profile </Link>
         <Link to="/explore" className="nav-item"> Explore </Link>
+        
+          <Link to="/signup" className="nav-item"> Signup </Link> 
+        <Link to="/login" className="nav-item"> Login </Link>
+        
+        
+        
         <Form className="searchBar">
             <Form.Control
               type="search"
