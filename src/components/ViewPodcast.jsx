@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom'
   <h2> Your Podcasts </h2>
     {allPodcasts && allPodcasts.map((onePodcast) => {
         return (
-       <Card style={{ width: 350, height: 600, margin: 15 }}>
+       <Card key={onePodcast._id}style={{ width: 350, height: 600, margin: 15 }}>
        <h1>{onePodcast.podcastname}</h1>
        <h1>{onePodcast.podcastdescription}</h1>
        <h1>{onePodcast.podcastcategory}</h1>
@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
        <h1>{onePodcast.podcastimage}</h1>
        <h1>{onePodcast.episodename}</h1>
 
-       <Link to='/updatePodcast'><button type='button'>Update Podcast</button></Link>
+       <Link to={`/updatePodcast ${onePodcast._id}`}><button type='button'>Update Podcast</button></Link>
         <button type='button'> Delete Podcast</button>
         </Card>
         

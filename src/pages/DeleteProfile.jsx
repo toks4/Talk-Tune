@@ -11,7 +11,7 @@ import { Button, Card } from 'antd';
 
     return (
         <Card
-            title={food.firstname}
+            title={podCast.firstname}
             style={{ width: 230, height: 300, margin: 10 }}
                 >
             <p>Last name {food.lastname}</p>
@@ -22,4 +22,4 @@ import { Button, Card } from 'antd';
     );
   }
   
-  export default FoodBox;
+  export default DeleteProfile;

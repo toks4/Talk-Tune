@@ -25,13 +25,14 @@ if (!user) {
 }
 
   return (
+
     <div className=''>
 
 
-    <div className='user-prof'>
-    <h1>Hi, {user.firstname}!</h1>
+   <div className='user-prof'>
+       <h1>Hi, {user.firstname}!</h1>
 
-    <div>
+    </div>
     <div>
     <Link to='/profile/updateprofile'>
         <button className='updateProfileBtn' type='submit'> Update Profile </button>
@@ -39,7 +40,7 @@ if (!user) {
     <Link to='/profile/viewprofile'>
         <button className='viewProfileBtn' type='submit'> View Profile </button>
     </Link>
-<Divider> </Divider>
+<Divider> 
 <Link to='/favouritePodcast'>
         <button className='favPodcastsBtn' type='submit'> Favourite Podcast </button>
     </Link>
@@ -49,36 +50,11 @@ if (!user) {
     <Link to='/viewPodcast'>
         <button className='viewPodcastsBtn' type='submit'> View Podcast </button>
     </Link>
+    </Divider>
+    </div>
    
    
    
-   <div className='container'>
-
-   
-    
-
-   </div>
-   <div>
-    <button className='logoutBtn' type='submit'>Favourite podcastsBtn</button>
-   </div>
-   <div>
-    <button className='logoutBtn' type='submit'>Create own Podcast</button>
-   </div>
-   <div>
-    <button className='logoutBtn' type='submit'>Update own Podcast</button>
-   </div>
-
-   <div>
-    <button className='logoutBtn' type='submit'>Logout</button>
-   </div>
-    
-
-
-
-
-  
-  
-  
     
     </div>
   )
