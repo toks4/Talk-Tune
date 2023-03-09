@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios';
 import { useContext, useEffect } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function ReviewForm() {
   const [rating, setRating] = useState(0);
@@ -41,7 +41,9 @@ function ReviewForm() {
     <form onSubmit={handleReviewSubmit}>
         <label>Rating:<input type='number' value={rating} onChange={event => setRating(event.target.value)}/></label>
         <label>Review:<input type='text' value={content} onChange={event => setContent(event.target.value)}/></label>
+        <Link to='/viewPodcast/'>
         <button type='submit'>Post</button>
+        </Link>
     </form>
   )
 }

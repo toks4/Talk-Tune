@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { createContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const SessionContext = createContext()
 
@@ -51,7 +51,7 @@ const SessionContextProvider = ({ children }) => {
         setIsAuthenticated(true)
       }
     }
-  }, [token])
+  }, [token, isAuthenticated])
 
   const navigate = useNavigate()
 
@@ -60,6 +60,7 @@ const SessionContextProvider = ({ children }) => {
     setIsAuthenticated(false)
     setToken()
     setUser('')
+    setPodcastId('');
     navigate('/')
 
   }

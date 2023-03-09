@@ -25,7 +25,7 @@ const LoginPage = () => {
       setToken(response.data.authToken)
       setUser(response.data.user)
 
-      if (response.status === 201) {
+      if (response.status === 200) {
       navigate('/profile')
       } 
     } catch (error) {
@@ -39,8 +39,7 @@ const LoginPage = () => {
     <label>Username:
        <input 
            type="text" 
-           value={username
-           }
+           value={username}
            onChange={event => setUsername(event.target.value)}
        />
     </label>

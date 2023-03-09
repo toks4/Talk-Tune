@@ -2,7 +2,8 @@ import { Button } from "react-bootstrap";
 import React, { useContext } from 'react'
 import '/src/App.css';
 import {SessionContext} from "../contexts/SessionContext";
-
+import { Link } from 'react-router-dom';
+import { Search } from 'antd';
 
   function NavBar() {
   
@@ -12,7 +13,7 @@ import {SessionContext} from "../contexts/SessionContext";
     return (
       <div>
       <nav>
-      <a href="#"><img class='logo' src="src/assets/logo.png" width='200px' height='200px' alt="logo"/></a>
+      <Link to='/'><img class='logo' src="src/assets/logo.png" width='400px' height='200px' alt="logo"/></Link>
       <div>
       <ul id="navbar">
       <li><a href="/">Home</a></li>
@@ -22,15 +23,12 @@ import {SessionContext} from "../contexts/SessionContext";
       <li><a href="/login">Login</a></li>
       <li><a href="/about">About</a></li>
       </ul>
-      
-        
       </div>
       <div id="mobile-nav">
         <i id="bar" className= 'fas fa-times'></i>
       </div>
-      <Button className='searchBtnMain' type='submit'
-             onClick={() => {console.log("Clicked Button")}}>Search</Button>
-            <button onClick={logoutFunction}>Logout</button>
+      <Search placeholder="input search text" onSearch={onSearch} enterButton />
+      <button onClick={logoutFunction}>Logout</button>
     </nav>
   </div>
     )

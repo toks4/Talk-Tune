@@ -47,7 +47,7 @@ function UpdatePodcast() {
     const response = await axios.put(`http://localhost:5005/pod/podcast/${podcastId}`, updatedPodcast);
     console.log(response.data)
 
-    nav ('/viewPodcast')
+    nav ('/viewPodcast');
   };
 
 

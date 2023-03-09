@@ -10,22 +10,34 @@ import { SessionContext } from '../contexts/SessionContext';
     const [allPodcasts, setAllPodcasts] = useState('')
     const nav = useNavigate();
     const { podcastId } = useParams();
+    const [podReviews, setPodReviews] = useState([])
 
     useEffect(() => {
         async function fetchPodcast () {
         const response =  await axios.get(`http://localhost:5005/pod/podcast`)
-
-
        setAllPodcasts(response.data)
       }
       fetchPodcast()
     }, [])
 
-    const handleDelete = async (id) => {
-      await axios.delete(`http://localhost:5005/pod/podcast/${id}`);
-      setAllPodcasts(allPodcasts.filter(podcast => podcast._id !== id));     
-    };
-  
+    useEffect(() => {
+      async function fetchPodReviews () {
+        try {
+          const response = await axios.get(`http://localhost:5005/reviews/${podcastId}`);
+          setPodReviews(response.data);
+          setPodReviews(response.data.reviews);
+        } catch (error){
+          console.log(error);
+        }
+      }
+      fetchPodReviews();
+    }, [podcastId]);
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:5005/pod/podcast/${id}`);
+    setAllPodcasts(allPodcasts.filter((podcast) => podcast._id !== id));     
+  };
+
 
   return (
   <div className='allPodcasts'>
@@ -40,16 +52,25 @@ import { SessionContext } from '../contexts/SessionContext';
        <h1>{onePodcast.podcastimage}</h1>
        <h1>{onePodcast.episodename}</h1>
 
+
        <Link to={`/updatePodcast/${onePodcast._id}`}><button type='button'>Update Podcast</button></Link>
        <Link to={`/addReview/${onePodcast._id}`}><button type='button'>Add a review</button></Link>
        <button type='button' onClick={() => handleDelete(onePodcast._id)}> Delete Podcast </button>
-        </Card>
-        
-        )}
-      )}
-      <button type="button" onClick={() => nav('/profile')}>Back</button>
-   </div>
-  )
+       
+       {podReviews.map((review) => (
+                <Card key={review._id} style={{ margin: '15px 0' }}>
+                  <p>Review: {review.review}</p>
+                  <p>Rating: {review.rating}</p>
+                </Card>
+              ))}
+            </Card>
+          );
+        })}
+      <button type="button" onClick={() => nav('/profile')}>
+        Back
+      </button>
+    </div>
+  );
 }
 
 export default ViewPodcast
