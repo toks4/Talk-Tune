@@ -17,7 +17,7 @@ const SignupPage = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/auth/signup`, {
+      const response = await axios.post(`http://localhost:5005/auth/signup`, {
         firstname,
         lastname,
         birthday,

@@ -12,7 +12,7 @@ function ViewProfile() {
 
     useEffect(() => {
         async function fetchProfile () {
-        const response =  await axios.get(`${import.meta.env.VITE_BASE_API_URL}/profile/profile`)
+        const response =  await axios.get(`http://localhost:5005/profile/profile`)
 
 
        setUrProfile(response.data)
@@ -21,7 +21,7 @@ function ViewProfile() {
     }, [])
 
     const handleDelete = async (id) => {
-        await axios.delete(`${import.meta.env.VITE_BASE_API_URL}/profile/${id}`);
+        await axios.delete(`http://localhost:5005/profile/${id}`);
         setUrProfile(urProfile.filter(profile => profile._id !== id));     
       };
 

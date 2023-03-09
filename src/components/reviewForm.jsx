@@ -14,7 +14,7 @@ function ReviewForm() {
 
   const podcastReview = async () => {
       try {
-          const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/reviews/${podcastId}`)
+          const response = await axios.get(`http://localhost:5005/reviews/${podcastId}`)
           setReviews(response.data)
           console.log(response.data);
       } catch (error) {
@@ -33,7 +33,7 @@ function ReviewForm() {
     const CreateReview = {rating, content, creator: user._id, podcast: podcastId }
     
      // console.log(CreateReview)
-      const response = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/reviews/addReviews`, CreateReview)
+      const response = await axios.post(`http://localhost:5005/reviews/addReviews`, CreateReview)
       //console.log(response);
   }
 

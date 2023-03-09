@@ -23,7 +23,7 @@ function CreatePodcast() {
         const CreatePodcast = {podcastname, podcastdescription, podcastcategory,
         podcastaudio, podcastimage, episodename}
         console.log(CreatePodcast)
-        const response = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast`, CreatePodcast)
+        const response = await axios.post(`http://localhost:5005/pod/podcast`, CreatePodcast)
 
 
         setPodcastName('')
