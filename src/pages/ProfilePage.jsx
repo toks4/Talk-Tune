@@ -43,7 +43,7 @@ useEffect(()=>{
     <Link to='/createPodcast'>
         <button className='podcastsBtn' type='submit'> Create Podcast </button>
     </Link>
-    <Link to='/viewPodcast'>
+    <Link to='/viewPodcast/:podcastId'>
         <button className='viewPodcastsBtn' type='submit'> View Your Podcast(s) </button>
     </Link>
     

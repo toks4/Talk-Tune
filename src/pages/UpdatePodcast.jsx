@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { SessionContext } from '../contexts/SessionContext';
+import { PlusOutlined } from '@ant-design/icons';
+import { Form, Upload } from 'antd';
 
 function UpdatePodcast() {
   const [podcastname, setPodcastName] = useState('');
@@ -12,9 +14,6 @@ function UpdatePodcast() {
   const [episodename, setEpisodeName] = useState('');
   const { podcastId } = useParams();
   const { user } = useContext(SessionContext);
-  if (!user) {
-    return <p>Loading</p>
-   }
 
   const nav = useNavigate();
 
@@ -87,10 +86,14 @@ function UpdatePodcast() {
           <option value="truecrime">True Crime</option>
           </select>
         </label>
-        <label>
-          Audio:
-          <input type="text" value={podcastaudio} onChange={(event) => setPodcastAudio(event.target.value)} />
-        </label>
+        <Form.Item label="Upload" valuePropName="fileList">
+          <Upload action="/upload.do" listType="picture-card">
+            <div>
+              <PlusOutlined />
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </div>
+          </Upload>
+        </Form.Item>
         <label>
           Image:
           <input type="text" value={podcastimage} onChange={(event) => setPodcastImage(event.target.value)} />
