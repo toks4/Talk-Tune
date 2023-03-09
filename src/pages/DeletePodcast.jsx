@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
     useEffect(() => {
         async function fetchPodcast () {
-        const response =  await axios.get(`http://localhost:5005/pod/podcast`)
+        const response =  await axios.get(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast`)
 
 
        setAllPodcasts(response.data)
@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
     }, [])
 
     const handleDelete = async (onePodcast) => {
-      await axios.delete(`http://localhost:5005/pod/podcast/${podcastId}`);     
+      await axios.delete(`${import.meta.env.VITE_BASE_API_URL}/pod/podcast/${podcastId}`);     
     };
   
 

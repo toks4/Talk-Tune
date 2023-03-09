@@ -13,7 +13,7 @@ const SessionContextProvider = ({ children }) => {
 
   const verifyToken = async jwt => {
     try {
-      let verifiedUser = await fetch('http://localhost:5005/auth/verify', {
+      let verifiedUser = await fetch(`${import.meta.env.VITE_BASE_API_URL}/auth/verify`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${jwt}`,
@@ -58,12 +58,14 @@ const SessionContextProvider = ({ children }) => {
   const logoutFunction = ()=>{
     window.localStorage.removeItem('authToken') 
     setIsAuthenticated(false)
+    setToken()
+    setUser('')
     navigate('/')
 
   }
 
   return (
-    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction, setUser, user, podcastId, setPodcastId }}>
+    <SessionContext.Provider value={{ setToken, isAuthenticated, isLoading, logoutFunction, setUser, user, podcastId, setPodcastId, token }}>
       {children}
     </SessionContext.Provider>
   )

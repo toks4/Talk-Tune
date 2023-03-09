@@ -19,7 +19,7 @@ function UpdateProfile(){
 
   useEffect(() => {
   const fetchData = async () => {
-   const response =  axios.get(`http://localhost:5005/profile/${profileId}`);
+   const response =  axios.get(`${import.meta.env.VITE_BASE_API_URL}/profile/${profileId}`);
    console.log(response.data)
    const {firstname, lastname, birthday, city, country, email, username, password} = response.data;
         setFirstName(firstname);
@@ -48,7 +48,7 @@ function UpdateProfile(){
         password,
       };
   
-      const response = await axios.put(`http://localhost:5005/profile/${profileId}`, updatedProfile);
+      const response = await axios.put(`${import.meta.env.VITE_BASE_API_URL}/profile/${profileId}`, updatedProfile);
       console.log(response.data)
   
       nav ('/viewProfile')

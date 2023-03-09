@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Divider } from 'antd';
+import { useContext } from 'react'
 import { SessionContext } from '../contexts/SessionContext';
 
+
 function ProfilePage() {
+    const navigate = useNavigate()
 
    /* const getUser = async () => {
-    const response = await axios.get(`http://localhost:5005/profile/${userId}`,{
+    const response = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/profile/${userId}`,{
     
     })
     const data = await response.json();
@@ -20,9 +22,12 @@ function ProfilePage() {
 */
 
 const {user} = useContext(SessionContext)
-if (!user) {
-   return <p>You need to Login First!</p>
-}
+useEffect(()=>{
+    if (!user) {
+    navigate('/login')
+    }
+ },[]);
+
 
   return (
     <div>
