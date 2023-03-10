@@ -2,6 +2,62 @@
     width: 200%;
 }
 
+
+/* Sign Up Form */
+
+.form {
+display: flex;
+flex-direction: column;
+width: 100%;
+color: #0E1520;
+}
+
+.formLayout {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 40px;
+    width: 30%;
+    font-weight: 600;
+    display: flex;
+   justify-content: center;
+   text-align: center;
+   margin: auto;
+   margin-top: 3%;
+}
+
+input {
+    background-color: #ffffff;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 500;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .signUpBtn {
+    background-color:#0E1520;
+  }
+
+
 /* Home Page */
 
 body {

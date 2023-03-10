@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Form } from 'antd';
 
 const SignupPage = () => {
   // Add some states to control your inputs
@@ -39,51 +38,52 @@ const SignupPage = () => {
   }
 
   return (
-   <div>
-    <form onSubmit={handleSubmit} >
-        <label>First Name: 
+   
+  <div className='formLayout'>
+  <form onSubmit={handleSubmit} className='form'>
+        <label>First Name
         <input 
            type="text" 
            value={firstname}
            onChange={event => setFirstName(event.target.value)}
            /> </label>
-        <label>Last Name: 
+        <label>Last Name
            <input 
            type="text" 
            value={lastname}
            onChange={event => setLastName(event.target.value)}
            /> </label>
-            <label>Birthday: 
+            <label>Birthday
            <input 
            type="number" 
            value={birthday}
            onChange={event => setBirthday(event.target.value)}
             /> </label>
-            <label>Country: 
+            <label>Country
            <input 
            type="text" 
            value={country}
            onChange={event => setCountry(event.target.value)}
            /> </label>
-            <label>City:
+            <label>City
            <input 
            type="text" 
            value={city}
            onChange={event => setCity(event.target.value)}
            />  </label>
-            <label>Email: 
+            <label>Email
            <input 
            type="text" 
            value={email}
            onChange={event => setEmail(event.target.value)}
            /> </label>
-           <label>Username: 
+           <label>Username
            <input 
            type="text" 
            value={username}
            onChange={event => setUsername(event.target.value)}
            /> </label>
-            <label>Password: 
+            <label>Password
            <input 
            type="text" 
            value={password}
@@ -91,6 +91,7 @@ const SignupPage = () => {
            /> </label>
     <button className='signUpBtn' type='submit'>Sign Up</button>
     </form>
+   
     </div>
   )
 }
