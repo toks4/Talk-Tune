@@ -13,7 +13,7 @@ import Search from './Search'
     return (
       <div>
       <nav>
-      <Link to='/'><img class='logo' src="src/assets/logo.png" width='400px' height='200px' alt="logo"/></Link>
+      <Link to='/'><img class='logo' src="src/assets/logo.png" alt="logo"/></Link>
       <div>
       <ul id="navbar">
       <li><a href="/">Home</a></li>

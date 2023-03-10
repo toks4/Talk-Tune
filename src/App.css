@@ -9,24 +9,33 @@ body {
 }
 
 .App {
-    width: 100%;
+  width: 100%;
   height: 100%;
   background-color: #0E1520;
 }
 
 .logo {
-    width: 200px;
+    width: 180px;
     height: 200x;
     margin-right: 250px;
-    margin-left: 150px;
+    margin-left: 170px;
     }
 
 .homePageBGImg {
     position: relative;
     width: 100%;
     height: 50%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+.homePageBGImg2 {
+    width: 35%;
+    height: 30%;
+    margin-top: -50%;
+    margin-bottom: 30px;
+    margin-left: 50%;
+    position: inherit;
+}
+
 
 .homePageBGTitle1 {
     position: relative;
@@ -183,7 +192,7 @@ nav{
 
 /* Home Page Categories */
 
-.exploreCategoriesText {
+.exploreCategoriesTitle {
     position: relative;
     left: 29%;
     margin-top: 20%;
@@ -195,7 +204,7 @@ nav{
 }
 
 .exploreCategoriesPodcastText {
-  color:#4BAFE1;
+  color:#2150f8;
 }
 
 
@@ -210,7 +219,7 @@ nav{
 .comedyBtn {
     width: 200px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 40px;
     color: #0E1520;
     font-size: 18px;
@@ -225,14 +234,15 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
 .artBtn {
     width: 170px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 30px;
     color: #0E1520;
     font-size: 18px;
@@ -247,14 +257,15 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
 .newsBtn {
     width: 170px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 30px;
     color: #0E1520;
     font-size: 18px;
@@ -269,14 +280,15 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
 .scienceBtn {
     width: 200px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 30px;
     color: #0E1520;
     font-size: 18px;
@@ -291,14 +303,15 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
 .techBtn {
     width: 250px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 30px;
     color: #0E1520;
     font-size: 18px;
@@ -313,14 +326,15 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
 .educationBtn {
     width: 250px;
     height: 65px;
-    background: #D9D9D9;
+    background: #e9e9e9;
     border-radius: 30px;
     color: #0E1520;
     font-size: 18px;
@@ -334,7 +348,8 @@ nav{
     color: #0E1520;
     font-size: 18px;
     font-weight: 550;
-    box-shadow: inset 0 0 25px 0px;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
     border:#D9D9D9;
 }
 
@@ -342,9 +357,126 @@ nav{
 
 .exploreCategorieRow2 {
     margin-top: 35px;
+    margin-right: 20px;
+    margin-left: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.healthBtn {
+    width: 250px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.healthBtn:hover {
+    width: 250px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.fictionBtn {
+    width: 170px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.fictionBtn:hover {
+    width: 170px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.musicBtn {
+    width: 160px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.musicBtn:hover {
+    width: 160px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.societyBtn {
+    width: 280px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.societyBtn:hover {
+    width: 280px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.historyBtn {
+    width: 160px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.historyBtn:hover {
+    width: 160px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
 }
 
 /* Explore Categorie Buttons 3 */
@@ -354,4 +486,168 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 40px;
+    margin-left: 10px;
+}
+
+.sportsBtn {
+    width: 160px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.sportsBtn:hover {
+    width: 160px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.truecrimeBtn {
+    width: 200px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.truecrimeBtn:hover {
+    width: 200px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.religionBtn {
+    width: 310px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.religionBtn:hover {
+    width: 310px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.tvBtn {
+    width: 190px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.tvBtn:hover {
+    width: 190px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+.businessBtn {
+    width: 170px;
+    height: 65px;
+    background: #e9e9e9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.businessBtn:hover {
+    width: 170px;
+    height: 65px;
+    background: #D9D9D9;
+    border-radius: 30px;
+    color: #0E1520;
+    font-size: 18px;
+    font-weight: 550;
+    background: linear-gradient(180deg, #CA73FE 0%, rgba(11, 78, 255, 10) 100%);
+    border-radius: 30px;
+    border:#D9D9D9;
+}
+
+/* About Talk Tune Home Page */
+
+.aboutTalkTuneTalk {
+    color:#2150f8;
+}
+
+.aboutTalkTuneTitle {
+position: relative;
+left: 60%;
+margin-top: 17%;
+margin-bottom: 60px;
+font-style: normal;
+color: #FFFFFF;
+font-weight: 510;
+font-size: 300%;
+}
+
+.aboutTalkTuneText {
+    position: relative;
+    left: 61%;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.talkTuneYoutubeImg {
+    position: relative;
+    left: 5%;
+    margin-top: -20%;
+}
+
+/* Top Podcasts */
+
+.topPodcastsTitleText {
+    color:#2150f8;
+}
+
+.topPodcastsTitle {
+    position: relative;
+    left: 35%;
+    margin-top: 15%;
+    margin-bottom: 50px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 280%;
 }
