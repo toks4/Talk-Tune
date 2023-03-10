@@ -39,15 +39,15 @@ function CreatePodcast() {
     }
 
   return (
-    <div>
+    <div className='createPodcast'>
         <h4>Create Podcast </h4>
-        <form style = {{display : "flex", flexDirection: 'column'}} onSubmit={handleSubmit}>
-        <label>Podcast Creator: {user.firstname} {user.lastname}</label>
+        <form style = {{display : "flex", flexDirection: 'column'}} onSubmit={handleSubmit} className="createPodcastForm">
+        <label className='podcastCreator'>Podcast Creator: {user.firstname} {user.lastname}</label>
         <label>Name: <input type= "text" onChange = {event => setPodcastName (event.target.value)}></input></label>
         <label>Description: <input type= "text" onChange = {event => setPodcastDescription (event.target.value)}></input></label>
         <label>Category:
-        <select value={podcastcategory} onChange = {event => setPodcastCategory (event.target.value)}>
-        <option> Choose Category </option>
+        <select value={podcastcategory} onChange = {event => setPodcastCategory (event.target.value)} className='chooseCategory'>
+        <option value="Choose Category"> Choose Category </option>
         <option value="business">Business</option>
           <option value="tech">Technology</option>
           <option value="news">News</option>
@@ -70,8 +70,8 @@ function CreatePodcast() {
         <label>Image: <input type= "text" onChange = {event => setPodcastImage (event.target.value)}></input></label>
         <label>Episode: <input type= "text" onChange = {event => setEpisodeName(event.target.value)}></input></label>
 
-        <button type="submit" >Create Podcast</button>
-        <button type="button" onClick={() => nav('/profile')}>Back</button>
+        <button type="submit" className='createPodcastBtn'>Create Podcast</button>
+        <button type="button" className='createPodcastBtnBack' onClick={() => nav('/profile')}>Back</button>
 
         </form>
     </div>

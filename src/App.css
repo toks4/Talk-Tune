@@ -296,6 +296,117 @@ nav{
 }
 
 
+/* Profile Page */
+
+.profilePageTitle {
+    position: relative;
+    margin-top: 10%;
+    left: 40%;
+    margin-bottom: 60px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 350%;
+}
+
+.viewProfileBtn {
+    position: relative;
+    left: 40%;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    margin-top: 50px;
+    font-size: 1.2em;
+}
+
+.profileButtons {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-top: 50px;
+margin-left: 20%;
+margin-right: 20%;
+}
+
+.favPodcastsBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+}
+
+.podcastsBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+}
+
+.viewPodcastsBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+}
+
+.avatar-uploader {
+    margin-left: 46%;
+}
+
+/* Create Podcast */
+.createPodcast {
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 50%;
+    font-weight: 600;
+   justify-content: center;
+   text-align: center;
+   margin: auto;
+   margin-top: 3%;
+   font-weight: 600;
+}
+
+
+.createPodcastForm {
+    color: #0E1520;
+}
+
+.createPodcastBtn {
+    background: #0E1520;;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.createPodcastBtnBack {
+    background: #0E1520;;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.podcastCreator {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.chooseCategory {
+    background-color: #FFFFFF;
+}
+
+
+
 /* Explore Categorie Buttons 1 */
 
 .exploreCategorieRow1 {
