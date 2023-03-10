@@ -34,17 +34,18 @@ const LoginPage = () => {
   }
 
   return (
-  <div>
-    <form onSubmit={handleSubmit}>
-    <label>Username:
+  <div className='formLayoutLogin'>
+    <form onSubmit={handleSubmit} className='form'>
+    <label>Username
        <input 
            type="text" 
            value={username}
            onChange={event => setUsername(event.target.value)}
        />
     </label>
-    <label>Password:
+    <label>Password
        <input 
+       className='loginPassword'
            type="password" 
            value={password}
            onChange={event => setPassword(event.target.value)}

@@ -15,7 +15,7 @@ const HomePage = () => {
     <h1 class='homePageBGTitle2'>Made Easy</h1>
     <p class='homePageP1'>Create your own podcasts.</p>
     <p class='homePageP2'>Listen to your favourite creators!</p>
-    <Link to='/signup'><button type='button' class='homePageBtn'> Start Listening </button></Link>
+    <Link to='/homepageSignupBtn'><button type='button' class='homePageBtn'> Start Listening </button></Link>
     <div className='catagoriesPodcast'>
     <h1 class='exploreCategoriesTitle'>Explore <span class='exploreCategoriesPodcastText'>Podcast</span> Categories</h1>
     <div class='exploreCategorieRow1'>

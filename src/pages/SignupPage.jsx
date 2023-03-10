@@ -39,7 +39,7 @@ const SignupPage = () => {
 
   return (
    
-  <div className='formLayout'>
+  <div className='formLayoutSignup'>
   <form onSubmit={handleSubmit} className='form'>
         <label>First Name
         <input 
