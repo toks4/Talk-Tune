@@ -6,9 +6,11 @@ import Search from '../components/Search';
 function ExplorePage() {
   return (
     <div>
-        <h1> Explore Page </h1>
-        <Search />
+        <h1 className='explorePageTitle'> Explore Page </h1>
+       
+
         <Divider />
+        <div className='explorePageButtons'>
         <Link to='/explore/allPodcasts'>
         <button className='podcastsBtn' type='submit'> Podcasts </button>
         </Link>
@@ -24,6 +26,8 @@ function ExplorePage() {
         <Link>
         <button className='episodesBtn' type='submit'> Episodes </button>
         </Link>
+        </div>
+        
     </div>
   )
 }

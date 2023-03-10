@@ -48,22 +48,22 @@ function CreatePodcast() {
         <label>Category:
         <select value={podcastcategory} onChange = {event => setPodcastCategory (event.target.value)} className='chooseCategory'>
         <option value="Choose Category"> Choose Category </option>
-        <option value="business">Business</option>
-          <option value="tech">Technology</option>
-          <option value="news">News</option>
-          <option value="education">Education</option>
-          <option value="science">Science</option>
-          <option value="health/fitness">Health & Fitness</option>
-          <option value="sports">Sports</option>
-          <option value="comedy">Comedy</option>
-          <option value="fiction">Fiction</option>
-          <option value="religion/spirituality">Religion/Spirituality</option>
-          <option value="arts">Arts</option>
-          <option value="music">Music</option>
-          <option value="tv/film">TV & Film</option>
-          <option value="history">History</option>
-          <option value="culture">Society & Culture</option>
-          <option value="truecrime">True Crime</option>
+        <option value="Business">Business</option>
+          <option value="Tech">Technology</option>
+          <option value="News">News</option>
+          <option value="Education">Education</option>
+          <option value="Science">Science</option>
+          <option value="Health/Fitness">Health & Fitness</option>
+          <option value="Sports">Sports</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Religion/Spirituality">Religion/Spirituality</option>
+          <option value="Arts">Arts</option>
+          <option value="Music">Music</option>
+          <option value="Tv/Film">TV & Film</option>
+          <option value="History">History</option>
+          <option value="Culture">Society & Culture</option>
+          <option value="TrueCrime">True Crime</option>
         </select>
         </label>
         <label>Audio: <input type= "text" onChange = {event => setPodcastAudio(event.target.value)}></input></label>

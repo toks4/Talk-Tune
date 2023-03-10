@@ -53,11 +53,18 @@ const SignupPage = () => {
            value={lastname}
            onChange={event => setLastName(event.target.value)}
            /> </label>
+           <label>Email
+           <input 
+           type="text" 
+           value={email}
+           onChange={event => setEmail(event.target.value)}
+           /> </label>
             <label>Birthday
            <input 
-           type="number" 
+           type="date" 
            value={birthday}
            onChange={event => setBirthday(event.target.value)}
+           className='birthdayBtn'
             /> </label>
             <label>Country
            <input 
@@ -71,12 +78,6 @@ const SignupPage = () => {
            value={city}
            onChange={event => setCity(event.target.value)}
            />  </label>
-            <label>Email
-           <input 
-           type="text" 
-           value={email}
-           onChange={event => setEmail(event.target.value)}
-           /> </label>
            <label>Username
            <input 
            type="text" 
@@ -85,7 +86,7 @@ const SignupPage = () => {
            /> </label>
             <label>Password
            <input 
-           type="text" 
+           type="password" 
            value={password}
            onChange={event => setPassword(event.target.value)}
            /> </label>

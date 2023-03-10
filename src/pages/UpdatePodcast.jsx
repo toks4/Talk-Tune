@@ -4,6 +4,8 @@ import axios from 'axios';
 import { SessionContext } from '../contexts/SessionContext';
 import { PlusOutlined } from '@ant-design/icons';
 import { Form, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 function UpdatePodcast() {
   const [podcastname, setPodcastName] = useState('');
@@ -52,10 +54,10 @@ function UpdatePodcast() {
 
 
   return (
-    <div>
+    <div className='updatePodcast'>
       <h4>Update Podcast</h4>
-      <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
-      <label>Podcast Creator: {user.firstname} {user.lastname}</label>
+      <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} className='updatePodcastForm'>
+      <label className='podcastCreator'>Podcast Creator: {user.firstname} {user.lastname}</label>
         <label>
           Name:
           <input type="text" value={podcastname} onChange={(event) => setPodcastName(event.target.value)} />
@@ -66,34 +68,30 @@ function UpdatePodcast() {
         </label>
         <label>
           Category:
-          <select value={podcastcategory} onChange={(event) => setPodcastCategory(event.target.value)} >
+          <select value={podcastcategory} onChange={(event) => setPodcastCategory(event.target.value)} className='podcastCategory'>
           <option> Choose Category </option>
-          <option value="business">Business</option>
-          <option value="tech">Technology</option>
-          <option value="news">News</option>
-          <option value="education">Education</option>
-          <option value="science">Science</option>
-          <option value="health/fitness">Health & Fitness</option>
-          <option value="sports">Sports</option>
-          <option value="comedy">Comedy</option>
-          <option value="fiction">Fiction</option>
-          <option value="religion/spirituality">Religion/Spirituality</option>
-          <option value="arts">Arts</option>
-          <option value="music">Music</option>
-          <option value="tv/film">TV & Film</option>
-          <option value="history">History</option>
-          <option value="culture">Society & Culture</option>
-          <option value="truecrime">True Crime</option>
+          <option value="Business">Business</option>
+          <option value="Tech">Technology</option>
+          <option value="News">News</option>
+          <option value="Education">Education</option>
+          <option value="Science">Science</option>
+          <option value="Health/Fitness">Health & Fitness</option>
+          <option value="Sports">Sports</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Religion/Spirituality">Religion/Spirituality</option>
+          <option value="Arts">Arts</option>
+          <option value="Music">Music</option>
+          <option value="Tv/Film">TV & Film</option>
+          <option value="History">History</option>
+          <option value="Culture">Society & Culture</option>
+          <option value="True Crime">True Crime</option>
           </select>
         </label>
-        <Form.Item label="Upload" valuePropName="fileList">
-          <Upload action="/upload.do" listType="picture-card">
-            <div>
-              <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </div>
-          </Upload>
-        </Form.Item>
+        <label>
+          Audio:
+          <input type="text" value={podcastaudio} onChange={(event) => setPodcastAudio(event.target.value)} />
+        </label>
         <label>
           Image:
           <input type="text" value={podcastimage} onChange={(event) => setPodcastImage(event.target.value)} />
@@ -104,7 +102,7 @@ function UpdatePodcast() {
         </label>
 
         <button className='updatePodcastBtn' type="submit" > Update Podcast </button>
-        <button type="button" onClick={() => nav('/viewPodcast')}>Back</button>
+        <button type="button" onClick={() => nav('/viewPodcast')} className='createPodcastBtnBack'>Back</button>
       </form>
     </div>
   );

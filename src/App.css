@@ -1,5 +1,78 @@
-.allPodcasts {
-    width: 200%;
+.footer {
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-evenly;
+}
+
+/* Explore Page */
+
+.explorePageTitle {
+    position: relative;
+    left: 40%;
+    margin-top: 5%;
+    margin-bottom: 60px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 280%;
+}
+
+.podcastsBtn {
+    background: #0E1520;;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.categoriesBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.creatorsBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.topicsBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.episodesBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.explorePageButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+Search {
+    display: flex;
+
 }
 
 
@@ -388,7 +461,7 @@ margin-right: 20%;
 }
 
 .createPodcastBtnBack {
-    background: #0E1520;;
+    background: #0E1520;
     border-radius: 30px;
     font-weight: 600;
     color: #FFFFFF;
@@ -405,6 +478,277 @@ margin-right: 20%;
     background-color: #FFFFFF;
 }
 
+/* Your Podcasts */
+
+.allPodcastsForm {
+   text-align: center;
+   font-size: 10px;
+}
+
+.flex-container {
+    display: flex;
+    margin-top: 5%;
+}
+
+.updatePodcastBtn {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-right: 5px;
+    margin-left: 2px;
+}
+
+.addReviewBtn {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-right: 5px;
+}
+
+.deleteBtn {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-right: -10px;
+}
+
+.yourPodcastsTitle {
+    position: relative;
+    left: 38%;
+    margin-bottom: 60px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 300%;
+    font-weight: 600;
+}
+
+.backBtnPodcast {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    width: 20%;
+    margin-left: 40%;
+}
+
+.ant-card-ant-card-bordered-allPodcastsForm-css-dev-only-do-not-override-1me4733 {
+    color: #FFFFFF;
+}
+
+/* All Podcasts Form */
+.allPodcastsForm {
+font-size: 10px;
+}
+
+.yourProfileTitle {
+    position: relative;
+    left: 39%;
+    margin-bottom: 60px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 300%;
+    font-weight: 600;
+}
+
+.backBtnProfile {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    width: 20%;
+    margin-right: 20%;
+    margin-left: 40%;
+}
+
+.updateProfileBtn {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 25%;
+}
+
+.deleteProfileBtn {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 25%;
+}
+
+.ant-card.ant-card-bordered.allPodcastsForm.css-dev-only-do-not-override-1me4733 {
+    left: 31%;
+}
+
+/* Update Profile */
+
+.updateProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color:#FFFFFF;
+}
+
+.updateProfileForm {
+    border-radius: 5px;
+    background-color:#FFFFFF;
+    padding: 40px;
+    width: 30%;
+    font-weight: 600;
+    display: flex;
+   justify-content: center;
+   text-align: center;
+   margin: auto;
+   margin-top: 3%;
+   color: #0E1520;
+}
+
+.updateProfileBtnView {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 25%;
+}
+
+.deleteProfileBtnView {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 15px;
+    width: 25%;
+    padding: 0.8em 2.3em;
+}
+
+.updateProfileButton {
+    background: #0E1520;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100%;
+    padding: 0.8em 2.3em;
+
+}
+
+.backBtnProfile2 {
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    width: 100%;
+    margin-right: 20%;
+    margin-left: 1%;
+    background-color: #0E1520;
+}
+
+.ant-card-body {
+    margin: -15px;
+}
+
+/* Update Podcast */
+.updatePodcastForm {
+    color: #0E1520;
+}
+.updateProfileTitle {
+position: relative;
+    margin-top: 5%;
+    left: 38%;
+  margin-bottom: 10px;
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 510;
+    font-size: 300%;
+}
+
+.updatePodcast {
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 50%;
+    font-weight: 600;
+   justify-content: center;
+   text-align: center;
+   margin: auto;
+   margin-top: 3%;
+   font-weight: 600;
+}
+
+.podcastCategory {
+    background-color: #FFFFFF;
+}
+
+.backBtnProfile2 {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    font-size: 1.1em;
+}
+
+.updateProfileBtn {
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #0E1520;
+    width: 100%;
+    font-size: 1.1em;
+    margin-left: -2px;
+}
+
+.birthdayBtn {
+    background-color: #FFFFFF;
+    width: 99%;
+    height: 35px;
+    border-radius: 4px;
+    margin-left: -5px;
+    border-style: groove;
+    border-width: 1px;
+    margin-bottom: 10px;
+    color:#0E1520;
+    text-align: center;
+    }
 
 
 /* Explore Categorie Buttons 1 */

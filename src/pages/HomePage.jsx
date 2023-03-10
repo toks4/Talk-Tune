@@ -43,19 +43,23 @@ const HomePage = () => {
     </div>
     <div class='aboutTalkTune'>
     <h1 class='aboutTalkTuneTitle'>What is <span class='aboutTalkTuneTalk'>Talk</span> Tune</h1>
-    <p class='aboutTalkTuneText'>Here some text.Here some text.<br></br>
-About what the platform is for About what the<br></br>
-For what kind of people it is for Who we want to help<br></br>
-Who we want to help etc. help etc.
-For what kind of <br></br> 
-people  it is for Who we want to help</p>
+    <p class='aboutTalkTuneText'>Welcome to Talk-Tune, the podcast app that brings <br></br>
+    you a diverse and captivating selection of podcasts to <br></br>
+    enrich your free time. With our app, you'll have access <br></br>
+    to a wide range of topics from inspiring personal stories <br></br>
+    to fascinating conversations about science, politics, <br></br>
+    and more.</p>
     <img src='/src/assets/talkTuneYoutube.png' class='talkTuneYoutubeImg'></img>
     </div>
     <div class='topPodcasts'>
     <h1 class='topPodcastsTitle'>Top <span class='topPodcastsTitleText'>Ranking</span> Podcasts</h1>
     </div>
-
-
+  <footer className='footer'>
+  <p><a href="/">Home</a></p>
+  <p><a href="/">Signup</a></p>
+  <p><a href="/">Explore</a></p>
+  <p><a href="/">Login</a></p>
+  </footer>
   </div>
   )
 }

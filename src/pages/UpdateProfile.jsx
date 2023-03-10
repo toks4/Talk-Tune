@@ -56,60 +56,61 @@ function UpdateProfile(){
 
 
 return (
-  <div>
-  <h4>Update Profile</h4>
-   <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} >
-       <label>First Name: 
+  <div >
+  <h4 className='updateProfileTitle'>Update Profile</h4>
+   <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit} className='updateProfileForm' >
+       <label>First Name
        <input 
           type="text" 
           value={firstname}
           onChange={(event) => setFirstName(event.target.value)}
           /> </label>
-       <label>Last Name: 
+       <label>Last Name
           <input 
           type="text" 
           value={lastname}
           onChange={(event) => setLastName(event.target.value)}
           /> </label>
-           <label>Birthday: 
-          <input 
-          type="number" 
-          value={birthday}
-          onChange={(event) => setBirthday(event.target.value)}
-           /> </label>
-           <label>Country: 
-          <input 
-          type="text" 
-          value={country}
-          onChange={(event) => setCountry(event.target.value)}
-          /> </label>
-           <label>City:
-          <input 
-          type="text" 
-          value={city}
-          onChange={(event) => setCity(event.target.value)}
-          />  </label>
-           <label>Email: 
+          <label>Email
           <input 
           type="text" 
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           /> </label>
-          <label>Username: 
+           <label>Birthday
+          <input 
+          type="date" 
+          value={birthday}
+          onChange={(event) => setBirthday(event.target.value)}
+          className='birthdayBtn'
+           /> </label>
+           <label>Country
+          <input 
+          type="text" 
+          value={country}
+          onChange={(event) => setCountry(event.target.value)}
+          /> </label>
+           <label>City
+          <input 
+          type="text" 
+          value={city}
+          onChange={(event) => setCity(event.target.value)}
+          />  </label>
+          <label>Username
           <input 
           type="text" 
           value={username}
           onChange={(event) => setUsername(event.target.value)}
           /> </label>
-           <label>Password: 
+           <label>Password
           <input 
           type="text" 
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           />
           </label>
-   <button className='updateProfileBtn' type='submit'> Update Profile </button>
-   <button type="button" onClick={() => nav('/profile')}>Back</button>
+   <button className='updateProfileButton' type='submit'> Update Profile </button>
+   <button type="button" onClick={() => nav('/profile')} className='backBtnProfile2'>Back</button>
    </form>
   </div>
  );
