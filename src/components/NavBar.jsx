@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import '/src/App.css';
 import {SessionContext} from "../contexts/SessionContext";
 import { Link } from 'react-router-dom';
-import { Search } from 'antd';
+import Search from './Search'
 
   function NavBar() {
   
@@ -17,18 +17,18 @@ import { Search } from 'antd';
       <div>
       <ul id="navbar">
       <li><a href="/">Home</a></li>
-      <li><a href="/profile">Profile</a></li>
       <li><a href="/explore">Explore</a></li>
+      <li><a href="/profile">Profile</a></li>
       <li><a href="/signup">Signup</a></li>
       <li><a href="/login">Login</a></li>
-      <li><a href="/about">About</a></li>
+      <li><a href="/" onClick={logoutFunction}>Logout</a></li>
+      <Search />
       </ul>
       </div>
       <div id="mobile-nav">
         <i id="bar" className= 'fas fa-times'></i>
       </div>
-      <Search placeholder="input search text" onSearch={onSearch} enterButton />
-      <button onClick={logoutFunction}>Logout</button>
+    
     </nav>
   </div>
     )

@@ -16,7 +16,6 @@ function Search({ filterAll }) {
 
   return (
     <div className='explorePageSearchBar'>
-     <Divider>Search</Divider>
       <Container>
        <InputGroup className='explorePageSearch'>
         <FormControl
@@ -30,9 +29,8 @@ function Search({ filterAll }) {
       }}
       value={searchQuery} onChange={handleInput}
       />
-          <Link>
-           <Button className='searchBtn' type='submit'
-           onClick={() => {console.log("Clicked Button")}} > Search </Button>
+          <Link className='searchBtn' type='submit'
+           onClick={() => {console.log("Clicked Button")}}>
           </Link>
        </InputGroup>
      </Container>
